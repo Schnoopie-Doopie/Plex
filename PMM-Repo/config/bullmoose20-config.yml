@@ -1,0 +1,204 @@
+### Must be on NIGHTLY 1.17.3-develop188 or greater
+libraries:
+  test-Movies:   # Must match a library name in your Plex
+    radarr:                                         # Can be individually specified per library as well
+      url: http://10.1.1.213:7878/radarr
+      token: 4cb221cef1c6430a9dbe16b8eed2b265
+      version: v3
+      root_folder_path: /Videos/Movies
+      radarr_path: /Videos/Movies/
+      plex_path: /share/CACHEDEV2_DATA/Videos/Movies/
+      monitor: true
+      availability: released
+      quality_profile: Ultra-HD
+      tag: Scripts-Meta-Manager-Movies
+      search: true
+      add_existing: false
+      add_missing: false
+      upgrade_existing: true
+    settings:
+      cache_builders: 1
+      missing_path: /config/missing/movies
+      sync_mode: append
+      asset_directory: config/assets/Movies
+    operations:
+      delete_unmanaged_collections: false
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+      mass_audience_rating_update: imdb
+      mass_critic_rating_update: mdb_tomatoes
+      mass_user_rating_update: mdb
+      radarr_remove_by_tag: Scripts-Meta-Manager, scripts-meta-manager, scripts-meta-manager-movies
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+    - git: PMM/award/separator
+    overlay_path:
+    - remove_overlays: false                        # Set to true if you want to remove overlays
+    - reapply_overlay: true                        # If you are doing a lot of testing and changes like me, keep this to true to always reapply overlays
+#    - reset_overlays: tmdb                          # if you want to reset the poster to default poster from tmdb
+#    - file: config/movie-overlays-new.yml    
+    - git: PMM/overlays/resolution
+      template_variables:
+        use_4k: true
+        use_1080p: true
+        use_hdr: true
+    - git: PMM/overlays/rt_cert_fresh
+      template_variables:
+        weight: 20
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true
+    - git: PMM/overlays/imdb_top_250
+      template_variables:
+        weight: 30
+    - git: PMM/overlays/mc_must_see
+      template_variables:
+        weight: 10
+  
+playlist_files:
+  - file: /config/Playlists
+##  template_variables:
+##    libraries: Movies, TV Shows
+settings:                                       # Can be individually specified per library as well
+  asset_depth: 5
+  cache_builders: 1
+  cache: true
+  cache_expiration: 30
+  check_nightly: false
+  collection_minimum: 3
+  collection_order: release
+  delete_below_minimum: true
+  delete_not_scheduled: true
+  dimensional_asset_rename: true
+  download_url_assets: true
+  ignore_blank_results: true
+  item_refresh_delay: 0
+  missing_only_released: true
+  only_filter_missing: true
+  playlist_report: true
+  playlist_sync_to_users: all
+  released_missing_only: true
+  run_again_delay: 2
+  save_missing: true
+  save_report: true
+  show_filtered: true
+  show_missing: true
+  show_options: false
+  show_unmanaged: true
+  sync_mode: sync
+  tvdb_language: eng
+  verify_ssl: true
+  default_collection_order:
+  ignore_ids:
+  ignore_imdb_ids:
+#  custom_repo:
+  asset_directory: config/assets
+  asset_folders: true
+  create_asset_folders: true
+  prioritize_assets: false
+  show_missing_assets: true
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+#  custom_repo: https://raw.githubusercontent.com/FrostyWolf/PlexMetaManager/master/Configs
+  custom_repo:
+  show_unconfigured: true
+plex:                                           # Can be individually specified per library as well
+  url: http://10.1.1.9:32400
+  token: 2CU6imwyFT7VEsJTXvhh
+  timeout: 60
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:
+  apikey: 0222a37c1cbf36311df0badf7bfc3e74
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: http://10.1.1.218:8181/tautulli
+  apikey: ea1bdf886ca049acbbb5c8f19bbf4495
+radarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.213:7878/radarr
+  token: 4cb221cef1c6430a9dbe16b8eed2b265
+  version: v3
+  add: true
+  root_folder_path: /Videos/Movies
+  monitor: true
+  availability: released
+  quality_profile: Ultra-HD
+  tag: Scripts-Meta-Manager
+  search: false
+  add_existing: true
+  add_missing: true
+  upgrade_existing: false
+  radarr_path:
+  plex_path:
+sonarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.214:8989/sonarr
+  token: d9b942cce2b748f48bfd2fb3d36ef1de
+  version: v3
+  add: false
+  root_folder_path: /Videos/TV Shows
+  monitor: missing
+  quality_profile: Ultra-HD
+  language_profile: English
+  series_type: standard
+  season_folder: false
+  tag: Scripts-Meta-Manager
+  search: false
+  cutoff_search: false
+  add_existing: false
+  upgrade_existing: false
+  sonarr_path:
+  plex_path:
+omdb:
+  apikey: 54e7b49c
+  cache_expiration: 60
+trakt:
+  client_id: 68e38375437c14f53f5a9a04bd052444515af2961289726cb7c4e610cece3897
+  client_secret: b684ae99dc0b1f0e6638b9911489e1e1ec6e6c54ac2e6bac7f5df53c630eb4e2
+  authorization:
+    access_token: 5bdb0066c86c43e5e09b11efbc8aa67d847af23fa7f8e9f576cb4cdfd3a6a592
+    token_type: Bearer
+    expires_in: 7889238
+    refresh_token: a1a934028e35cf0026ac92b3f9d81607d94c7c2050314de04a7edc4c2e0a8b79
+    scope: public
+    created_at: 1666108906
+  pin:
+mal:
+  client_id: e035b67cd30011ef17cff595f6499d52
+  client_secret: 8392f32d13f6bdb069dd4a136a5058ff3c19202e3632ab1758f51d83ad04874b
+  localhost_url: http://localhost/?code=def502007383d380aec4c5da581762d5e0b6c35806745bf37214c860b9b92ac4b5af08db4bdb770df81ab0f82d21d59c6fb7cae68892f1d03f2abe1ac3284d9b5c9e00beb55e2e19b3d3e335987e5de34d86d0cdeec26ff7123a46ee99e493086a831223738227650061c2fea1e44eb2666f303a3401461851d074187613695c410d4eed10132b05a521fe8f319adcd42f96cbb42c7f9735de605308d6349df05a10045abea61aa3868ba49b6dec3442882e2b82313f98c9ff2a3175d9c4d83ff3d2bdd02d473bf09c6b35d339f42141f809871864f5d515f9930cc2b58f2c84693eb5f56faa817232d9716c6fcd0a6b4a8e15c1966bab59c7b93d7ff468c7562dfb7402cc5a3980e08a9c8704a8cf7605de95852ba923b00c86b109d97fa16766b496154b8260919bcd89bf7d805726f03e2050db9c4f8144509cdc2fd5034a45aabef4e1b66926f37170d84b2f12ab34f2213d39c8ece3f89b7872361bf1754029d536b645f5f700be2c656be4fcee3f173950835f64f99e84d197df27be156ffceb10c2712c95ffcc6166c3ab043f7ad06c70872157085487d430b112a75d939b774a5425bce9c9c6ec54b93ec926ba40856207f48ef69f5a5065504c37dbb406cfbd62e16f4420ab6c2410bca98e51bf68c2466ab09614d29f40dfba1e9c09343c13835732c6d859
+  authorization:
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImIyMmM3NmQ1ZmJmOGRjYzQ1NTUwMWY0MjBlOWI0ODAxZWUxY2JkM2YyZDA2ZWJjNDdlNTYyNTFiMTZlOWMyNjZiN2IzMWFmMjc3MjRiZTRjIn0.eyJhdWQiOiJlMDM1YjY3Y2QzMDAxMWVmMTdjZmY1OTVmNjQ5OWQ1MiIsImp0aSI6ImIyMmM3NmQ1ZmJmOGRjYzQ1NTUwMWY0MjBlOWI0ODAxZWUxY2JkM2YyZDA2ZWJjNDdlNTYyNTFiMTZlOWMyNjZiN2IzMWFmMjc3MjRiZTRjIiwiaWF0IjoxNjY2NTQwMzMyLCJuYmYiOjE2NjY1NDAzMzIsImV4cCI6MTY2OTIyMjMzMiwic3ViIjoiMTUzNzMxMzgiLCJzY29wZXMiOltdfQ.Udrzh-iDNSY_teaabTiX9Qsguy5MjCdCLht6zWwDrjwkWOk-BZvn6hkMtYI9x6Hj5KNfo1nJvv7h-Ply9zgJnLl0gowaRrSUecYItDL4OeyDytsuKxiTuiGuQ8urJ47kLizfZSw-1BwQOz-gmObrvEXDf5JKM4ZVspbTyI9gT-ftzbmMfR78n75s-qbMAo_xNOSRS6Bx6WhqnnghPpYJp2ITwkpapmoHCu6c0ybw5RQzf6Fci7Fgn1qZTsNJBSwbFT9V_AYcwR936mig_uPbc953pc1gG5Wg7IHFQ78s_5E5VNcVda0l51GG86ukRJHAzbieC-YGGQGcA_7zs2y43w
+    token_type: Bearer
+    expires_in: 2682000
+    refresh_token: def5020013d28c710062e153e0954b53b8a46b351c232bd60b24d04b37af3e3b77b4696a6fa41ed47f5c819de3bac3b4114e833ac5345ca4c6aeee3e213a45abba645ab3f23f8234164c61083a81d5e98300bd61f08b9ebb7440b08664bbc7d6c23e656d72239582e8de09e5e2d0723b966707ea2f62979cd221b59fb198cb6197d963954a9590aaf2b68e6af0e3405bcacb085b11705709ef859005671f40ba460117add9f127ad85e8ca13365ddf259f07340a613d8badd11d968345f174d469c3de5d2b624ae4113bed34f8a232c85bf3dc6a373143f4e4bdabf0d2d55bfc86f7fdaa33a3f78c3ab6d75b87a48c2bef3c21478126eb7ae70d77880ec36be1260280e539adbd2c10560d93684bdfaa44fa180cc3432acd06c47c5596083763ac2eb7c2bfa1cb337c236a0b486948586c194c6fbd3c04dc7035d0e173c53517405e0f93e81300d3d7314552b790ca548e17cbe1e9e9fb9c7f830c0ce2d252d40a07d77c6ab64e2165b87135d925ac6c0b231d0e85dc1696dc9121b5ca1948b1cbea174963e5fe29a2
+  cache_expiration: 60
+webhooks:                                       # Can be individually specified per library as well
+  error:
+  run_start:
+  run_end:
+  collection_creation:
+  collection_addition:
+  collection_removal:
+  version:
+mdblist:
+  apikey: 1zvwuk7ql70gyfp42h1pbciny
+  cache_expiration: 60
+notifiarr:
+  apikey: 319544dd-f253-494b-8d19-1f2913d4a4b0

@@ -1,0 +1,287 @@
+## This file is a template remove the .template to use the file
+
+
+playlist_files:
+- git: PMM/playlist
+- file: config/Playlists.yml
+- file: config/git/NoahNL/Playlist.yml
+- file: config/git/tuxpeople/Playlists.yml
+- file: config/git/Khak1s/Playlist/Playlist.yml
+
+libraries:                                      # Library mappings must have a colon (:) placed after them
+  Movies:
+    metadata_path:
+      - file: config/Movies.yml
+      - file: config/Tautulli.yml
+      - file: config/Networks.yml
+#      - folder: config/overlays 
+#      - git: PMM/overlays/audio_codec
+#      - git: PMM/overlays/audio_language
+#      - git: PMM/overlays/direct_play
+#      - git: PMM/overlays/imdb_top_250
+#      - git: PMM/overlays/ratings
+#      - git: PMM/overlays/resolution
+#      - git: PMM/overlays/special_release
+#      - git: PMM/overlays/streaming
+#      - git: PMM/overlays/video_format
+      - git: meisnate12/MovieCharts
+      - git: meisnate12/Studios
+      - git: meisnate12/IMDBGenres
+      - git: meisnate12/People
+      - git: PMM/award/bafta
+      - git: PMM/award/cannes
+      - git: PMM/award/choice
+      - git: PMM/award/golden
+      - git: PMM/award/oscars
+      - git: PMM/award/other
+      - git: PMM/award/spirit
+      - git: PMM/award/sundance
+      - git: PMM/chart/anilist
+      - git: PMM/chart/basic
+      - git: PMM/chart/imdb
+      - git: PMM/chart/myanimelist
+      - git: PMM/chart/other
+      - git: PMM/chart/tautulli
+      - git: PMM/chart/tmdb
+      - git: PMM/chart/trakt
+      - git: PMM/actor
+#    - git: PMM/audio_language
+      - git: PMM/movie/content_rating_us
+      - git: PMM/genre
+      - git: PMM/resolution_standards
+      - git: PMM/studio
+#    - git: PMM/subtitle_language
+      - git: PMM/year
+      - git: PMM/movie/country
+      - git: PMM/movie/decade
+      - git: PMM/movie/director
+      - git: PMM/movie/franchise
+      - git: PMM/movie/universe
+      - git: PMM/movie/producer
+      - git: PMM/movie/seasonal
+      - git: PMM/streaming
+      - git: PMM/movie/writer
+    overlay_path:
+      - remove_overlays: false
+#    - folder: config/overlays
+      - git: PMM/overlays/audio_codec
+      - git: PMM/overlays/audio_language
+      - git: PMM/overlays/direct_play
+      - git: PMM/overlays/imdb_top_250
+      - git: PMM/overlays/ratings
+      - git: PMM/overlays/resolution
+      - git: PMM/overlays/special_release
+      - git: PMM/overlays/streaming
+      - git: PMM/overlays/video_format
+  TV Shows:
+    metadata_path:
+      - file: config/TV Shows.yml
+      - file: config/Networks.yml
+      - file: config/Seasons.yml 
+      - file: config/Tautulli.yml
+      - folder: config/overlays
+#    - git: PMM/overlays/audio_codec
+#    - git: PMM/overlays/audio_language
+#    - git: PMM/overlays/direct_play
+#    - git: PMM/overlays/imdb_top_250
+#    - git: PMM/overlays/ratings
+#    - git: PMM/overlays/resolution
+#    - git: PMM/overlays/special_release
+#    - git: PMM/overlays/streaming
+#    - git: PMM/overlays/video_format
+      - git: meisnate12/ShowCharts
+      - git: meisnate12/Networks
+      - git: PMM/award/choice
+      - git: PMM/award/golden
+      - git: PMM/award/emmy
+      - git: PMM/chart/anilist
+      - git: PMM/chart/basic
+      - git: PMM/chart/imdb
+      - git: PMM/chart/myanimelist
+      - git: PMM/chart/other
+      - git: PMM/chart/tautulli
+      - git: PMM/chart/tmdb
+      - git: PMM/chart/trakt
+      - git: PMM/actor
+#    - git: PMM/audio_language
+      - git: PMM/show/content_rating_us            # Choose content_rating_uk or content_rating_us
+      - git: PMM/genre
+      - git: PMM/resolution_standards              # Choose resolution_standards or resolution
+      - git: PMM/studio
+#    - git: PMM/subtitle_language
+      - git: PMM/year
+      - git: PMM/show/country
+      - git: PMM/show/decade
+      - git: PMM/show/network
+      - git: PMM/streaming
+    overlay_path:
+      - remove_overlays: false
+      - folder: config/overlays
+      - git: PMM/overlays/audio_codec
+      - git: PMM/overlays/audio_codec
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/audio_codec
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/audio_language
+      - git: PMM/overlays/audio_language
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/audio_language
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/direct_play
+      - git: PMM/overlays/direct_play
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/direct_play
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/ratings
+      - git: PMM/overlays/ratings
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/ratings
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/resolution
+      - git: PMM/overlays/resolution
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/resolution
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/special_release
+      - git: PMM/overlays/special_release
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/special_release
+        template_variables:
+          overlay_level: season
+      - git: PMM/overlays/streaming
+      - git: PMM/overlays/streaming
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/streaming
+        template_variables:
+          overlay_level: season 
+      - git: PMM/overlays/video_format
+      - git: PMM/overlays/video_format
+        template_variables:
+          overlay_level: episode
+      - git: PMM/overlays/video_format
+        template_variables:
+          overlay_level: season
+settings:                                       # Can be individually specified per library as well
+  cache: true
+  cache_expiration: 60
+  collection_minimum: 3
+  collection_order: release
+  delete_below_minimum: true
+  asset_directory: config/assets
+  asset_folders: true
+  assets_for_all: false
+  sync_mode: sync
+  show_unmanaged: true
+  show_filtered: false
+  show_missing: true
+  save_missing: true
+  save_report: true
+  run_again_delay: 2
+  missing_only_released: true
+  create_asset_folders: true
+  show_missing_assets: true
+  tvdb_language: eng
+  released_missing_only: false
+  asset_depth: 5
+  prioritize_assets: false
+  dimensional_asset_rename: false
+  download_url_assets: true
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  default_collection_order:
+  item_refresh_delay: 0
+  delete_not_scheduled: true
+  only_filter_missing: false
+  show_options: false
+  ignore_ids:
+  ignore_imdb_ids:
+  playlist_sync_to_users: all
+  playlist_report: true
+  verify_ssl: true
+  custom_repo:
+  check_nightly: false
+webhooks:                                       # Can be individually specified per library as well
+  error:
+  run_start:
+  run_end:
+  collection_creation:
+  collection_addition:
+  collection_removal:
+  version:
+plex:                                           # Can be individually specified per library as well
+  url: http://10.1.1.9:32400
+  token: XSD2sH_bMgw9ZKtj9bMT
+  timeout: 60
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:
+  apikey: 0222a37c1cbf36311df0badf7bfc3e74
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: http://10.1.1.218:8181/tautulli
+  apikey: ea1bdf886ca049acbbb5c8f19bbf4495
+omdb:
+  apikey: 54e7b49c
+  cache_expiration: 60
+notifiarr:
+  apikey: 319544dd-f253-494b-8d19-1f2913d4a4b0
+radarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.213:7878/radarr
+  token: 4cb221cef1c6430a9dbe16b8eed2b265
+  version: v3
+  add: false
+  root_folder_path: /Videos/Movies
+  monitor: false
+  availability: announced
+  quality_profile: Ultra-HD
+  tag: Scripts-Meta-Manager
+  search: false
+  add_existing: false
+  upgrade_existing: false
+  radarr_path:
+  plex_path:
+sonarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.214:8989/sonarr
+  token: d9b942cce2b748f48bfd2fb3d36ef1de
+  version: v3
+  add: false
+  root_folder_path: /Videos/TV Shows
+  monitor: none
+  quality_profile: Ultra-HD
+  language_profile: English
+  series_type: standard
+  season_folder: false
+  tag: Scripts-Meta-Manager
+  search: false
+  cutoff_search: false
+  add_existing: false
+  upgrade_existing: false
+  sonarr_path:
+  plex_path:
+trakt:
+  client_id: 68e38375437c14f53f5a9a04bd052444515af2961289726cb7c4e610cece3897
+  client_secret: b684ae99dc0b1f0e6638b9911489e1e1ec6e6c54ac2e6bac7f5df53c630eb4e2
+  authorization:
+    access_token: af1509b0a96385d9a3a4a1ff01ccd14ef013d7585ad70ac79b8abbe0f8cdc8fd
+    token_type: Bearer
+    expires_in: 7889238
+    refresh_token: 009b86b5ba7d52d69e14c0715ae466f295ef24850851335b6ab6e71e8031538e
+    scope: public
+    created_at: 1650297605
+  pin:

@@ -1,0 +1,491 @@
+libraries:
+  Movies:
+    schedule: daily
+    radarr:                                         # Can be individually specified per library as well
+      url: http://10.1.1.213:7878/radarr
+      token: 4cb221cef1c6430a9dbe16b8eed2b265
+      version: v3
+      root_folder_path: /Videos/Movies
+      radarr_path: /Videos/Movies/
+      plex_path: /share/CACHEDEV2_DATA/Videos/Movies/
+      monitor: true
+      availability: released
+      quality_profile: Ultra-HD
+      tag: Scripts-Meta-Manager-Movies
+      search: true
+      add_existing: false
+      add_missing: false
+      upgrade_existing: true
+    settings:
+      cache_builders: 1
+      missing_path: config/missing/movies
+      sync_mode: sync
+      asset_directory: config/assets/Movies
+    operations:
+      delete_unmanaged_collections: true
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+      mass_audience_rating_update: imdb
+      mass_critic_rating_update: mdb_tomatoes
+      mass_user_rating_update: mdb
+      radarr_remove_by_tag: true #Scripts-Meta-Manager, scripts-meta-manager, scripts-meta-manager-movies
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+    - file: config/Marvel_Cinematic_Universe_Phases.yml
+    - file: config/git/PMM/streaming
+      template_variables:
+        sort_by: release.desc
+        use_separator: true
+    - file: config/git/PMM/award/separator_award
+    - file: config/git/PMM/award/bafta
+    - file: config/git/PMM/award/choice
+    - file: config/git/PMM/award/emmy
+    - file: config/git/PMM/award/golden
+    - file: config/git/PMM/award/oscars
+    - file: config/git/PMM/chart/basic
+    - file: config/git/PMM/chart/imdb
+      template_variables:
+        use_separator: true
+        radarr_add_missing_popular: true
+        radarr_tag_popular: PMM-Chart-IMDB-popular
+        item_radarr_tag_popular: PMM-Chart-IMDB-popular
+#        sonarr_add_missing_popular: true
+#        sonarr_tag_popular: PMM-Chart-IMDB-popular
+#        item_sonarr_tag_popular: PMM-Chart-IMDB-popular
+    - file: config/git/PMM/chart/other
+      template_variables:
+        radarr_add_missing_pirated: true
+        radarr_tag_pirated: PMM-Chart-Other-pirated
+        item_radarr_tag_pirated: PMM-Chart-Other-pirated
+#        sonarr_add_missing_pirated: true
+#        sonarr_tag_pirated: PMM-Chart-Other-pirated
+#        item_sonarr_tag_pirated: PMM-Chart-Other-pirated
+    - file: config/git/PMM/chart/tautulli
+      template_variables:
+    - file: config/git/PMM/chart/tmdb
+      template_variables:
+        use_separator: true
+        radarr_add_missing_popular: true
+        radarr_tag_popular: PMM-Chart-TMDB-popular
+        item_radarr_tag_popular: PMM-Chart-TMDB-popular
+#        sonarr_add_missing_popular: true
+#        sonarr_tag_popular: PMM-Chart-TMDB-popular
+#        item_sonarr_tag_popular: PMM-Chart-TMDB-popular
+    - file: config/git/PMM/chart/trakt
+      template_variables:
+        use_separator: true
+        radarr_add_missing_popular: true
+        radarr_tag_popular: PMM-Chart-trakt-popular
+        item_radarr_tag_popular: PMM-Chart-trakt-popular
+#        sonarr_add_missing_popular: true
+#        sonarr_tag_popular: PMM-Chart-trakt-popular
+#        item_sonarr_tag_popular: PMM-Chart-trakt-popular
+        radarr_add_missing_recommended: true
+        radarr_tag_recommended: PMM-Chart-trakt-recommended
+        item_radarr_tag_recommended: PMM-Chart-trakt-recommended
+#        sonarr_add_missing_recommended: true
+#        sonarr_tag_recommended: PMM-Chart-trakt-recommended
+#        item_sonarr_tag_recommended: PMM-Chart-trakt-recommended
+    - file: config/git/PMM/genre
+      template_variables:
+        use_separator: true
+    - file: config/git/PMM/movie/content_rating_us
+      template_variables:
+        use_separator: true
+    - file: config/git/PMM/movie/decade
+      template_variables:
+        use_separator: true
+    - file: config/git/PMM/movie/franchise
+      template_variables:
+        use_separator: true
+#    - file: config/git/PMM/movie/seasonal
+#      template_variables:
+#        use_separator: true
+#        collection_mode: hide
+    - file: config/git/PMM/movie/universe
+      template_variables:
+        use_separator: true
+        sep_style: orig
+        radarr_folder: /Videos/Movies
+        radarr_add_missing: true
+        radarr_tag: PMM-Movies-Universe
+        item_radarr_tag: PMM-Movies-Universe
+#    - file: config/git/PMM/movie/imdb
+#      template_variables:
+#        use_separator: true
+    - pmm: imdb    ### Added 6/01/2023 from example https://metamanager.wiki/en/latest/defaults/chart/imdb.html ###
+      template_variables:   ### Added 6/01/2023 from example https://metamanager.wiki/en/latest/defaults/chart/imdb.html ###
+        use_popular: false   ### Added 6/01/2023 from example https://metamanager.wiki/en/latest/defaults/chart/imdb.html ###
+        visible_library_top: true   ### Added 6/01/2023 from example https://metamanager.wiki/en/latest/defaults/chart/imdb.html ###
+        visible_home_top: true   ### Added 6/01/2023 from example https://metamanager.wiki/en/latest/defaults/chart/imdb.html ###
+        visible_shared_top: true       ### Added 6/01/2023 from example https://metamanager.wiki/en/latest/defaults/chart/imdb.html ###    
+    - file: config/git/PMM/resolution_standards
+      template_variables:
+        use_separator: true
+    - file: config/git/PMM/studio
+      template_variables:
+        use_separator: true
+    - file: config/git/PMM/year
+      template_variables:
+        use_separator: true
+    - file: config/git/PMM/actor
+      template_variables:
+        use_separator: true
+        style: bw
+        data:
+          depth: 5
+          limit: 150
+    - file: config/git/Khak1s/Movies/PopularOnServices
+    - folder: config/Movies/WhoDat104
+    - folder: config/Movies/Khak1s
+    overlay_path:
+    - remove_overlays: false
+#    - reapply_overlay: true
+    - file: config/movie-overlays.yml
+    - file: config/git/PMM/overlays/resolution
+      template_variables:
+        use_4k: true     # Use the 4K overlay#
+        use_1080p: true  # Use the 1080P overlay#
+        use_720p: true   # Use the 720P overlay#
+        use_480p: true   # Use the 480P overlay#
+        use_dv: true     # Use the DV overlay#
+        use_hdr: true    # Use the HDR overlay#
+    - file: config/git/PMM/overlays/rt_cert_fresh
+      template_variables:
+        weight: 20
+    - file: config/git/PMM/overlays/audio_codec
+      template_variables:
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true
+    - file: config/git/PMM/overlays/imdb_top_250
+      template_variables:
+        weight: 30
+    - file: config/git/PMM/overlays/mc_must_see
+      template_variables:
+        weight: 10
+  TV Shows:
+    schedule: daily
+    sonarr:                                         # Can be individually specified per library as well
+      url: http://10.1.1.214:8989/sonarr
+      token: d9b942cce2b748f48bfd2fb3d36ef1de
+      version: v3
+      add_missing: false
+      root_folder_path: /Videos/TV Shows
+      sonarr_path: /Videos/TV Shows/
+      plex_path: /share/CACHEDEV2_DATA/Videos/TV Shows/
+      monitor: missing
+      quality_profile: Ultra-HD
+      language_profile: English
+      series_type: standard
+      season_folder: true
+      tag: Scripts-Meta-Manager-Shows
+      search: true
+      cutoff_search: false
+      add_existing: false
+      upgrade_existing: true
+    settings:
+      cache_builders: 1
+      missing_path: config/missing/TV-Shows
+      sync_mode: sync
+      asset_directory: config/assets/TV-Shows
+    operations:
+      assets_for_all: true
+      delete_unmanaged_collections: true
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+      mass_critic_rating_update: imdb
+      mass_audience_rating_update: tmdb
+      mass_user_rating_update: mdb_tomatoes
+      mass_episode_critic_rating_update: imdb
+      mass_episode_audience_rating_update: tmdb
+      sonarr_remove_by_tag: true
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+    - file: config/git/PMM/streaming
+      template_variables:
+        use_separator: true
+        sort_by: release.desc
+    - file: config/git/PMM/actor
+      template_variables:
+        style: bw
+        data:
+          depth: 5
+          limit: 150
+    - file: config/git/PMM/award/separator
+    - file: config/git/PMM/award/choice
+    - file: config/git/PMM/award/emmy
+    - file: config/git/PMM/award/golden
+    - file: config/git/PMM/chart/basic
+    - file: config/git/PMM/chart/imdb
+      template_variables:
+        use_separator: true
+#        radarr_add_missing_popular: true
+#        radarr_tag_popular: PMM-Chart-IMDB-popular
+#        item_radarr_tag_popular: PMM-Chart-IMDB-popular
+        sonarr_add_missing_popular: true
+        sonarr_tag_popular: PMM-Chart-IMDB-popular
+        item_sonarr_tag_popular: PMM-Chart-IMDB-popular
+    - file: config/git/PMM/chart/other
+      template_variables:
+#        radarr_add_missing_pirated: true
+#        radarr_tag_pirated: PMM-Chart-Other-pirated
+#        item_radarr_tag_pirated: PMM-Chart-Other-pirated
+        sonarr_add_missing_pirated: true
+        sonarr_tag_pirated: PMM-Chart-Other-pirated
+        item_sonarr_tag_pirated: PMM-Chart-Other-pirated
+    - file: config/git/PMM/chart/tautulli
+    - file: config/git/PMM/chart/tmdb
+      template_variables:
+        use_separator: true
+#        radarr_add_missing_popular: true
+#        radarr_tag_popular: PMM-Chart-TMDB-popular
+#        item_radarr_tag_popular: PMM-Chart-TMDB-popular
+        sonarr_add_missing_popular: true
+        sonarr_tag_popular: PMM-Chart-TMDB-popular
+        item_sonarr_tag_popular: PMM-Chart-TMDB-popular
+    - file: config/git/PMM/chart/trakt
+      template_variables:
+        use_separator: true
+#        radarr_add_missing_popular: true
+#        radarr_tag_popular: PMM-Chart-trakt-popular
+#        item_radarr_tag_popular: PMM-Chart-trakt-popular
+        sonarr_add_missing_popular: true
+        sonarr_tag_popular: PMM-Chart-trakt-popular
+        item_sonarr_tag_popular: PMM-Chart-trakt-popular
+#        radarr_add_missing_recommended: true
+#        radarr_tag_recommended: PMM-Chart-trakt-recommended
+#        item_radarr_tag_recommended: PMM-Chart-trakt-recommended
+        sonarr_add_missing_recommended: true
+        sonarr_tag_recommended: PMM-Chart-trakt-recommended
+        item_sonarr_tag_recommended: PMM-Chart-trakt-recommended
+    - file: config/git/PMM/genre
+    - file: config/git/PMM/resolution_standards
+    - file: config/git/PMM/show/content_rating_us
+    - file: config/git/PMM/show/decade
+    - file: config/git/PMM/show/network
+    - file: config/git/PMM/studio
+    - file: config/git/PMM/year
+    - file: config/git/Khak1s/Tv/PopularOnServices
+    - file: config/git/Khak1s/Tv/Charts
+    - file: config/git/Khak1s/Tv/streaming
+    - file: config/TVShows/TVShows-Collections.yml
+    - folder: config/TVShows/WhoDat104
+    - folder: config/TVShows/Khak1s
+    overlay_path:
+    - remove_overlays: false
+#    - reapply_overlay: true
+#####     Show Level Overlays     #####    
+    - file: config/movie-overlays-new.yml
+    - file: config/git/PMM/overlays/resolution
+      template_variables:
+        use_4k: true     # Use the 4K overlay#
+        use_1080p: true  # Use the 1080P overlay#
+        use_720p: true   # Use the 720P overlay#
+        use_480p: true   # Use the 480P overlay#
+        use_dv: true     # Use the DV overlay#
+        use_hdr: true    # Use the HDR overlay#
+    - file: config/git/PMM/overlays/audio_codec
+      template_variables:
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true        
+    - file: config/git/PMM/overlays/imdb_top_250
+      template_variables:
+        weight: 30
+    - file: config/git/PMM/overlays/mc_must_see
+      template_variables:
+        weight: 10
+#####     Season Level Overlays     #####          
+    - file: config/git/PMM/overlays/resolution
+      template_variables:
+        overlay_level: season
+        use_4k: true     # Use the 4K overlay#
+        use_1080p: true  # Use the 1080P overlay#
+        use_720p: true   # Use the 720P overlay#
+        use_480p: true   # Use the 480P overlay#
+        use_dv: true     # Use the DV overlay#
+        use_hdr: true    # Use the HDR overlay#
+    - file: config/git/PMM/overlays/audio_codec
+      template_variables:
+        overlay_level: season      
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true                
+    - file: config/git/PMM/overlays/rt_cert_fresh
+      template_variables:
+        overlay_level: season
+        weight: 20
+    - file: config/git/PMM/overlays/imdb_top_250
+      template_variables:
+        overlay_level: season
+        weight: 30
+    - file: config/git/PMM/overlays/mc_must_see
+      template_variables:
+        overlay_level: season
+        weight: 10
+playlist_files:
+- git: PMM/playlist
+- file: config/Playlist/Khak1s/playlist
+
+settings:                                       # Can be individually specified per library as well
+  asset_depth: 5
+  cache_builders: 1
+  cache: true
+  cache_expiration: 30
+  check_nightly: false
+  collection_minimum: 3
+  collection_order: release
+  delete_below_minimum: true
+  delete_not_scheduled: true
+  dimensional_asset_rename: true
+  download_url_assets: true
+  ignore_blank_results: true
+  item_refresh_delay: 0
+  missing_only_released: true
+  only_filter_missing: true
+  playlist_report: true
+  playlist_sync_to_users: all
+  released_missing_only: true
+  run_again_delay: 2
+  save_missing: true
+  save_report: true
+  show_filtered: true
+  show_missing: true
+  show_options: false
+  show_unmanaged: true
+  sync_mode: append
+  tvdb_language: eng
+  verify_ssl: true
+  default_collection_order:
+  ignore_ids:
+  ignore_imdb_ids:
+#  custom_repo:
+  asset_directory: config/assets
+  asset_folders: true
+  create_asset_folders: true
+  prioritize_assets: false
+  show_missing_assets: true
+  show_missing_season_assets: true
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+#  custom_repo: https://raw.githubusercontent.com/FrostyWolf/PlexMetaManager/master/Configs
+  custom_repo:
+  show_unconfigured: true
+  playlist_exclude_users:
+plex:                                           # Can be individually specified per library as well
+  url: http://10.1.1.9:32400
+  token: yXVRsMC--MdJQ75MyECS
+  timeout: 60
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:
+  apikey: 0222a37c1cbf36311df0badf7bfc3e74
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: http://10.1.1.218:8181/tautulli
+  apikey: ea1bdf886ca049acbbb5c8f19bbf4495
+radarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.213:7878/radarr
+  token: 4cb221cef1c6430a9dbe16b8eed2b265
+  version: v3
+  add: true
+  root_folder_path: /Videos/Movies
+  monitor: true
+  availability: released
+  quality_profile: Ultra-HD
+  tag: Scripts-Meta-Manager
+  search: false
+  add_existing: true
+  add_missing: true
+  upgrade_existing: false
+  radarr_path:
+  plex_path:
+sonarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.214:8989/sonarr
+  token: d9b942cce2b748f48bfd2fb3d36ef1de
+  version: v3
+  add: false
+  root_folder_path: /Videos/TV Shows
+  monitor: missing
+  quality_profile: Ultra-HD
+  language_profile: English
+  series_type: standard
+  season_folder: false
+  tag: Scripts-Meta-Manager
+  search: false
+  cutoff_search: false
+  add_existing: false
+  upgrade_existing: false
+  sonarr_path:
+  plex_path:
+omdb:
+  apikey: 54e7b49c
+  cache_expiration: 60
+trakt:
+  client_id: 68e38375437c14f53f5a9a04bd052444515af2961289726cb7c4e610cece3897
+  client_secret: b684ae99dc0b1f0e6638b9911489e1e1ec6e6c54ac2e6bac7f5df53c630eb4e2
+  pin:
+  authorization:
+    access_token: 448c3847a9ae1429a76719e673804f087cb16d092999d717a1b37b637ad2562b
+    token_type: Bearer
+    expires_in: 7889238
+    refresh_token: 24c63982acadaf8f6acc71c03b4e0a701deb78dbcd31166554d98a73d8550d68
+    scope: public
+    created_at: 1672713772
+mal:
+  client_id: e035b67cd30011ef17cff595f6499d52
+  client_secret: 8392f32d13f6bdb069dd4a136a5058ff3c19202e3632ab1758f51d83ad04874b
+  localhost_url: http://localhost/?code=def502007383d380aec4c5da581762d5e0b6c35806745bf37214c860b9b92ac4b5af08db4bdb770df81ab0f82d21d59c6fb7cae68892f1d03f2abe1ac3284d9b5c9e00beb55e2e19b3d3e335987e5de34d86d0cdeec26ff7123a46ee99e493086a831223738227650061c2fea1e44eb2666f303a3401461851d074187613695c410d4eed10132b05a521fe8f319adcd42f96cbb42c7f9735de605308d6349df05a10045abea61aa3868ba49b6dec3442882e2b82313f98c9ff2a3175d9c4d83ff3d2bdd02d473bf09c6b35d339f42141f809871864f5d515f9930cc2b58f2c84693eb5f56faa817232d9716c6fcd0a6b4a8e15c1966bab59c7b93d7ff468c7562dfb7402cc5a3980e08a9c8704a8cf7605de95852ba923b00c86b109d97fa16766b496154b8260919bcd89bf7d805726f03e2050db9c4f8144509cdc2fd5034a45aabef4e1b66926f37170d84b2f12ab34f2213d39c8ece3f89b7872361bf1754029d536b645f5f700be2c656be4fcee3f173950835f64f99e84d197df27be156ffceb10c2712c95ffcc6166c3ab043f7ad06c70872157085487d430b112a75d939b774a5425bce9c9c6ec54b93ec926ba40856207f48ef69f5a5065504c37dbb406cfbd62e16f4420ab6c2410bca98e51bf68c2466ab09614d29f40dfba1e9c09343c13835732c6d859
+  authorization:
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg5ZGY5MjNlZDg2ZDk2NmQ0NDY3NTVmODRhMmMzZmYzNzgzOWU2Yzk2YjMzN2FmOTk0ODE5MTk1NzZiNTQyODFjOGNlYTJhZWEwYTJiMWVkIn0.eyJhdWQiOiJlMDM1YjY3Y2QzMDAxMWVmMTdjZmY1OTVmNjQ5OWQ1MiIsImp0aSI6Ijg5ZGY5MjNlZDg2ZDk2NmQ0NDY3NTVmODRhMmMzZmYzNzgzOWU2Yzk2YjMzN2FmOTk0ODE5MTk1NzZiNTQyODFjOGNlYTJhZWEwYTJiMWVkIiwiaWF0IjoxNjcxODI1OTE0LCJuYmYiOjE2NzE4MjU5MTQsImV4cCI6MTY3NDUwNDMxNCwic3ViIjoiMTUzNzMxMzgiLCJzY29wZXMiOltdfQ.JGuI9TUB1YkHoc8HI63JcUuDyFldnHhODgnTdQwONzyjwZbMvA-RNL4NPw1c9_lsDiIELeyQETR8c2IuEsZy8zUbi11rrC1DRDILfMLy0qOwH7io5Si3iGtxUisEnxkaOn1qOwjRsY4l9PBRGivKO2cRLvtM7hPXu5sK0vZvf143w2UrkrfRNd9nuzqgVtx5hd5zB8517mwbDCaJFNFrB1qhSdVI_G4DT3DNZuYL3fRcE17XaedgzDCEzq1DHkJEdx-DjnoOos-Nc-LkSANytE3NmTRq3Y4J8GlbQpL6_j_9OoR52onPyrpCk0pZ5_pbcTdD5cPCeP-wE0q1S18d1Q
+    token_type: Bearer
+    expires_in: 2678400
+    refresh_token: def50200961b4b71fd0fa0227736c9c4e03119e72a515757775303a6afebdba6a89280b1cd03d7a6887f34a01b3e0f8e2c4175901cb75b6fd7e9cf13d178ea5f5ca9d13f335fe8977d73fe137509320b66ce5c502710bee9456d06e187c6966d411ace96a705e63ec10b97e1df71b0d5cf0fb452c1b3bcd3846994cddb0b5915bed6197fdadef082f9d5a8f971dfb61429593677f4c272f4dc0cad35339b75a1d040b8caea8234a5071da5f9b522e0dc6c6eb34812927c57a2d33eaa8455403c6996e8173f3024065f19b531802061c1de122c55b7f4ffc09d4d58b3ea1f535fad94a27c4e7d6bc88ec94bef68134aee1aa720baae101f9464c96e1fd238c50e9a111d4e09a496da73baf32add6b7b98cd09fad21df22b5a4ec9140e8f65bdd1165da41d7c783beef46003bf66737e931f2fe3e08ed7dcda42f5d78e332f9ac3c7614857e9608bf906902b2bcac72d0ce8b6a9eadff7502ea04633ebff0f46b42a42e397f40cf47b45ff59bb1b74da7c6cca1fe495693537185d3a5236e97b41bb687bb45f906cf855
+  cache_expiration: 60
+webhooks:                                       # Can be individually specified per library as well
+  error:
+  run_start:
+  run_end:
+  collection_creation:
+  collection_addition:
+  collection_removal:
+  version:
+  delete:
+mdblist:
+  apikey: 1zvwuk7ql70gyfp42h1pbciny
+  cache_expiration: 60
+notifiarr:
+  apikey: 319544dd-f253-494b-8d19-1f2913d4a4b0

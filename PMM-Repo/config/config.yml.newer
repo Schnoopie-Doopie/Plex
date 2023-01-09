@@ -1,0 +1,557 @@
+libraries:
+  test-Movies:
+    schedule: daily
+    radarr:                                         # Can be individually specified per library as well
+      url: http://10.1.1.213:7878/radarr
+      token: 4cb221cef1c6430a9dbe16b8eed2b265
+      version: v3
+      add: false
+      root_folder_path: /Videos/Movies
+      monitor: false
+      availability: released
+      quality_profile: Ultra-HD
+      tag: Scripts-Meta-Manager-Movies
+      search: false
+      add_existing: false
+      add_missing: false
+      upgrade_existing: false
+    settings:
+      asset_depth: 5
+      asset_directory: config/assets/movies
+      asset_folders: true
+      cache_builders: 1
+      create_asset_folders: true
+      prioritize_assets: false
+      missing_path: /config/missing/movies
+    operations:
+      assets_for_all: true
+      delete_unmanaged_collections: true
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+#      mass_audience_rating_update: tmdb # rating2
+#      mass_user_rating_update: imdb   # rating3
+#      mass_critic_rating_update: mdb_tomatoes    # rating1
+#      mass_critic_rating_update: imdb                      #
+#      mass_audience_rating_update: mdb_tomatoesaudience    #
+#      mass_user_rating_update: tmdb                        #
+#      mass_episode_critic_rating_update: imdb              #
+#      mass_episode_audience_rating_update: tmdb
+      mass_audience_rating_update: imdb
+      mass_critic_rating_update: mdb_tomatoes
+      mass_user_rating_update: mdb      
+      radarr_remove_by_tag: Scripts-Meta-Manager
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+#      - folder: config/custom/movies/
+      - file: config/Marvel_Cinematic_Universe_Phases.yml
+      - git: PMM/streaming
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+          sort_by: release.desc          
+      - git: PMM/award/separator
+      - git: PMM/award/bafta
+#      - git: PMM/award/cannes
+      - git: PMM/award/choice
+      - git: PMM/award/emmy
+      - git: PMM/award/golden
+      - git: PMM/award/oscars
+#      - git: PMM/award/other
+#      - git: PMM/award/spirit
+#      - git: PMM/award/sundance
+      - git: PMM/chart/basic
+      - git: PMM/chart/imdb
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true      
+      - git: PMM/chart/other
+      - git: PMM/chart/tautulli
+      - git: PMM/chart/tmdb
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true 
+      - git: PMM/chart/trakt
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/genre
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/movie/content_rating_us
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/movie/decade
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/movie/franchise
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/movie/seasonal
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/movie/universe
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/resolution_standards
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/streaming
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/studio
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/year
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+      - git: PMM/actor
+        template_variables:
+          use_separator: true
+          style: bw
+          data:
+            depth: 5
+            limit: 150
+#      - git: PMM/movie/director
+#        template_variables:
+#          style: bw
+#          data:
+#            depth: 5
+#            limit: 150
+#      - git: PMM/movie/producer
+#        template_variables:
+#          style: bw
+#          data:
+#            depth: 5
+#            limit: 150
+#      - git: PMM/movie/writer
+#        template_variables:
+#          style: bw
+#          data:
+#            depth: 5
+#            limit: 150
+      - file: config/git/Khak1s/Movies/PopularOnServices
+      - file: config/git/Khak1s/Movies/Charts
+      - file: config/git/Khak1s/Movies/Genre
+      - file: config/Networks.yml
+      - file: config/Tautulli.yml      
+    overlay_path:
+      - remove_overlays: false
+      - reapply_overlay: true
+      - file: config/movie-overlays.yml
+#      - git: PMM/overlays/audio_codec
+#        template_variables:
+#          use_dts: true
+#          use_es: true 
+#          use_plus: true
+#          use_hra: true
+#          use_hd: true 
+#          use_truehd: true
+#          use_plus-atmos: true
+#          use_atmos: true 
+#          use_x: true
+#          use_truehd-atmos: true
+#      - git: PMM/overlays/imdb_top_250
+#        template_variables:
+#          weight: 30
+#      - git: PMM/overlays/mc_must_see
+#        template_variables:
+#          weight: 10
+#
+#      - git: PMM/overlays/ratings                          #
+#        template_variables:                                #
+#          rating1: critic                                  #
+#          rating2: audience                                #
+#          rating3: user                                    #
+#          rating1_image: imdb                              #
+#          rating2_image: rt_popcorn                        #
+#          rating3_image: tmdb                              #
+#          vertical_position: bottom
+#          horizontal_position: left
+#          rating_alignment: vertical                
+##      - git: PMM/overlays/ratings
+#        template_variables:
+#         
+#        rating1: critic
+#       rating1_image: imdb
+#      rating1_font: config/metadata/overlays/fonts/Impact.ttf
+#          rating1_font_size: 70
+#          rating2: audience
+#          rating2_image: rt_popcorn
+#          rating2_font: config/metadata/overlays/fonts/Avenir_95_Black.ttf
+#          rating2_font_size: 70
+#          rating3: user
+#          rating3_image: tmdb
+#          rating3_font: config/metadata/overlays/fonts/Adlib.ttf
+#          rating3_font_size: 63
+#          vertical_position: bottom
+#          horizontal_position: left
+#          rating_alignment: vertical
+#      - git: PMM/overlays/resolution
+#        template_variables:
+#          use_4k: true
+#          use_1080p: true
+#          use_hdr: true
+#      - git: PMM/overlays/rt_cert_fresh
+#        template_variables:
+#          weight: 20
+#      - git: PMM/overlays/streaming
+#        template_variables:
+#          vertical_offset: 10
+  test-TV Shows:
+    schedule: daily
+    sonarr:                                         # Can be individually specified per library as well
+      url: http://10.1.1.214:8989/sonarr
+      token: d9b942cce2b748f48bfd2fb3d36ef1de
+      version: v3
+      add: true
+      root_folder_path: /Videos/TV Shows
+      monitor: false
+      quality_profile: Ultra-HD
+      language_profile: English
+      series_type: standard
+      season_folder: true
+      tag: Scripts-Meta-Manager-Shows
+      search: true
+      cutoff_search: false
+      add_existing: false
+      upgrade_existing: true
+    settings:
+      asset_depth: 5
+      asset_directory: config/assets/shows
+      asset_folders: true
+      cache_builders: 1      
+      create_asset_folders: true
+      prioritize_assets: false
+      missing_path: /config/missing/shows
+    operations:
+      assets_for_all: true
+      delete_unmanaged_collections: true
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+      mass_critic_rating_update: imdb
+      mass_audience_rating_update: tmdb
+      mass_user_rating_update: mdb_tomatoes
+      mass_episode_critic_rating_update: imdb
+      mass_episode_audience_rating_update: tmdb
+      sonarr_remove_by_tag: Scripts-Meta-Manager
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+      - git: PMM/streaming
+        template_variables:     # Turn the separator collection on/off           #
+          use_separator: true
+          sort_by: release.desc     
+      - git: PMM/actor
+        template_variables:
+          style: bw
+          data:
+            depth: 5
+            limit: 150
+      - git: PMM/award/separator
+      - git: PMM/award/choice
+      - git: PMM/award/emmy
+      - git: PMM/award/golden
+#      - git: PMM/chart/anilist
+      - git: PMM/chart/basic
+      - git: PMM/chart/imdb
+      - git: PMM/chart/other
+      - git: PMM/chart/tautulli
+      - git: PMM/chart/tmdb
+      - git: PMM/chart/trakt
+      - git: PMM/genre
+      - git: PMM/resolution_standards
+      - git: PMM/show/content_rating_us
+      - git: PMM/show/decade
+      - git: PMM/show/network
+      - git: PMM/studio
+      - git: PMM/year
+      - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\PopularOnServices
+      - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\Charts
+      - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\streaming
+      - file: ./TVShows/TVShows-Collections.yml
+    overlay_path:
+      - remove_overlays: false
+      - reapply_overlay: true
+#      - git: PMM/overlays/streaming
+#        template_variables:
+#          vertical_offset: 10      
+#      - git: PMM/overlays/streaming
+#        template_variables:
+#          overlay_level: episode
+#          vertical_offset: 10
+#      - git: PMM/overlays/streaming
+#        template_variables:
+#          overlay_level: season
+#          vertical_offset: 10      
+#      - git: PMM/overlays/audio_codec
+#        template_variables:
+#          use_dts: true
+#          use_es: true 
+#          use_plus: true
+#          use_hra: true
+#          use_hd: true 
+#          use_truehd: true
+#          use_plus-atmos: true
+#          use_atmos: true 
+#          use_x: true
+#          use_truehd-atmos: true              
+#      - git: PMM/overlays/audio_codec
+#        template_variables:
+#          overlay_level: episode
+#          use_dts: true
+#          use_es: true 
+#          use_plus: true
+#          use_hra: true
+#          use_hd: true 
+#          use_truehd: true
+#          use_plus-atmos: true
+#          use_atmos: true 
+#          use_x: true
+#          use_truehd-atmos: true       
+#      - git: PMM/overlays/audio_codec
+#        template_variables:
+#          overlay_level: season
+#          use_dts: true
+#          use_es: true 
+#          use_plus: true
+#          use_hra: true
+#          use_hd: true 
+#          use_truehd: true
+#          use_plus-atmos: true
+#          use_atmos: true 
+#          use_x: true
+#          use_truehd-atmos: true        
+#      - git: PMM/overlays/ratings
+      - git: PMM/overlays/ratings
+        template_variables:
+          rating1: user
+          rating1_image: rt_tomato
+          rating1_font: config/metadata/overlays/fonts/Adlib.ttf
+          rating1_font_size: 63
+          rating2: critic
+          rating2_image: imdb
+          rating2_font: config/metadata/overlays/fonts/Impact.ttf
+          rating2_font_size: 70
+          rating3: audience
+          rating3_image: tmdb
+          rating3_font: config/metadata/overlays/fonts/Avenir_95_Black.ttf
+          rating3_font_size: 70
+          vertical_position: bottom
+          horizontal_position: left
+          rating_alignment: vertical
+#      - git: PMM/overlays/ratings
+#        template_variables:
+#          overlay_level: episode
+##      - git: PMM/overlays/ratings
+##        template_variables:
+##          overlay_level: episode
+#          rating1: user
+#          rating1_image: rt_tomato
+#          rating1_font: config/metadata/overlays/fonts/Adlib.ttf
+#          rating1_font_size: 63
+##          rating2: critic
+##          rating2_image: imdb
+##          rating2_font: config/metadata/overlays/fonts/Impact.ttf
+##          rating2_font_size: 70
+##          rating3: audience
+##          rating3_image: tmdb
+##          rating3_font: config/metadata/overlays/fonts/Avenir_95_Black.ttf
+##          rating3_font_size: 70
+##          vertical_position: center
+##          horizontal_position: left
+##          rating_alignment: vertical                    
+      - git: PMM/overlays/ratings
+        template_variables:
+          overlay_level: season
+#      - git: PMM/overlays/resolution
+#        template_variables:
+#          use_4k: true
+#          use_1080p: true
+#          use_hdr: true      
+#      - git: PMM/overlays/resolution
+#        template_variables:
+#          overlay_level: episode
+#          use_4k: true
+#          use_1080p: true
+#          use_hdr: true
+#      - git: PMM/overlays/resolution
+#        template_variables:
+#          overlay_level: season
+#          use_4k: true
+#          use_1080p: true
+#          use_hdr: true
+      - git: PMM/overlays/imdb_top_250
+        template_variables:
+          weight: 30
+#      - git: PMM/overlays/imdb_top_250
+#        template_variables:
+#          weight: 30
+#          overlay_level: season
+#      - git: PMM/overlays/imdb_top_250
+#        template_variables:
+#          weight: 30
+#          overlay_level: episode
+      - git: PMM/overlays/mc_must_see
+        template_variables:
+          weight: 10
+#      - git: PMM/overlays/mc_must_see
+#        template_variables:
+#          weight: 10
+#          overlay_level: season
+#      - git: PMM/overlays/mc_must_see
+#        template_variables:
+#          weight: 10
+#          overlay_level: episode
+      - git: PMM/overlays/rt_cert_fresh
+        template_variables:
+          weight: 20
+#      - git: PMM/overlays/rt_cert_fresh
+#        template_variables:
+#        weight: 20
+#        overlay_level: season
+#      - git: PMM/overlays/rt_cert_fresh
+#        template_variables:
+#          weight: 20
+#          overlay_level: episode
+#      - git: PMM/overlays/streaming
+#        template_variables:
+#          vertical_offset: 10      
+#      - git: PMM/overlays/streaming
+#        template_variables:
+#          overlay_level: episode
+#          vertical_offset: 10
+#      - git: PMM/overlays/streaming
+#        template_variables:
+#          overlay_level: season
+#          vertical_offset: 10          
+playlist_files:
+  - git: PMM/playlist
+settings:                                       # Can be individually specified per library as well
+  asset_depth: 5
+  asset_directory: config/assets
+  asset_folders: true
+  assets_for_all: true
+  cache_builders: 1
+  create_asset_folders: true
+  prioritize_assets: true
+  cache: true
+  cache_expiration: 60
+  check_nightly: false
+  collection_minimum: 3
+  collection_order: release
+  custom_repo:
+  default_collection_order:
+  delete_below_minimum: true
+  delete_not_scheduled: true
+  dimensional_asset_rename: true
+  download_url_assets: true
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  missing_only_released: true
+  only_filter_missing: true
+  playlist_report: true
+  playlist_sync_to_users: all
+  released_missing_only: true
+  run_again_delay: 2
+  save_missing: true
+  save_report: true
+  show_asset_not_needed: true
+  show_filtered: true
+  show_missing: true
+  show_missing_assets: true
+  show_missing_episode_assets: true
+  show_missing_season_assets: true
+  show_options: false
+  show_unmanaged: true
+  sync_mode: sync
+  tvdb_language: eng
+  verify_ssl: true
+plex:                                           # Can be individually specified per library as well
+  url: http://10.1.1.9:32400
+  token: XSD2sH_bMgw9ZKtj9bMT
+  timeout: 60
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:
+  apikey: 0222a37c1cbf36311df0badf7bfc3e74
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: http://10.1.1.218:8181/tautulli
+  apikey: ea1bdf886ca049acbbb5c8f19bbf4495
+radarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.213:7878/radarr
+  token: 4cb221cef1c6430a9dbe16b8eed2b265
+  version: v3
+  add: true
+  root_folder_path: /Videos/Movies
+  monitor: true
+  availability: released
+  quality_profile: Ultra-HD
+  tag: Scripts-Meta-Manager
+  search: false
+  add_existing: true
+  add_missing: true
+  upgrade_existing: false
+  radarr_path:
+  plex_path:
+sonarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.214:8989/sonarr
+  token: d9b942cce2b748f48bfd2fb3d36ef1de
+  version: v3
+  add: false
+  root_folder_path: /Videos/TV Shows
+  monitor: none
+  quality_profile: Ultra-HD
+  language_profile: English
+  series_type: standard
+  season_folder: false
+  tag: Scripts-Meta-Manager
+  search: false
+  cutoff_search: false
+  add_existing: false
+  upgrade_existing: false
+  sonarr_path:
+  plex_path:
+omdb:
+  apikey: 54e7b49c
+  cache_expiration: 60
+trakt:
+  client_id: 68e38375437c14f53f5a9a04bd052444515af2961289726cb7c4e610cece3897
+  client_secret: b684ae99dc0b1f0e6638b9911489e1e1ec6e6c54ac2e6bac7f5df53c630eb4e2
+  authorization:
+    access_token: 550c43ba530c388d5e095ae3f19d10b5b349b1a76f109230d8446f3a729b1ee4
+    token_type: Bearer
+    expires_in: 7889238
+    refresh_token: 280cfe26a030d7b957a66baad9e683a10a118bbab7d24e5f0ab352e9b3a53fd9
+    scope: public
+    created_at: 1658199604
+  pin: 7BF3CC09
+mal:
+  client_id: e035b67cd30011ef17cff595f6499d52
+  client_secret: 8392f32d13f6bdb069dd4a136a5058ff3c19202e3632ab1758f51d83ad04874b
+  localhost_url: http://localhost/?code=def502007383d380aec4c5da581762d5e0b6c35806745bf37214c860b9b92ac4b5af08db4bdb770df81ab0f82d21d59c6fb7cae68892f1d03f2abe1ac3284d9b5c9e00beb55e2e19b3d3e335987e5de34d86d0cdeec26ff7123a46ee99e493086a831223738227650061c2fea1e44eb2666f303a3401461851d074187613695c410d4eed10132b05a521fe8f319adcd42f96cbb42c7f9735de605308d6349df05a10045abea61aa3868ba49b6dec3442882e2b82313f98c9ff2a3175d9c4d83ff3d2bdd02d473bf09c6b35d339f42141f809871864f5d515f9930cc2b58f2c84693eb5f56faa817232d9716c6fcd0a6b4a8e15c1966bab59c7b93d7ff468c7562dfb7402cc5a3980e08a9c8704a8cf7605de95852ba923b00c86b109d97fa16766b496154b8260919bcd89bf7d805726f03e2050db9c4f8144509cdc2fd5034a45aabef4e1b66926f37170d84b2f12ab34f2213d39c8ece3f89b7872361bf1754029d536b645f5f700be2c656be4fcee3f173950835f64f99e84d197df27be156ffceb10c2712c95ffcc6166c3ab043f7ad06c70872157085487d430b112a75d939b774a5425bce9c9c6ec54b93ec926ba40856207f48ef69f5a5065504c37dbb406cfbd62e16f4420ab6c2410bca98e51bf68c2466ab09614d29f40dfba1e9c09343c13835732c6d859
+  authorization:
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjUyMTE0ZjVjOTZiZTU0NzE4ZjI2M2I1ZjQ0MjU3MmVmNDRmMzQ1NTAzM2ViODgyYTY3OGZkNzQ1MjZmOWJjZmZhYzRiNmRmNDJhYzBlOWYyIn0.eyJhdWQiOiJlMDM1YjY3Y2QzMDAxMWVmMTdjZmY1OTVmNjQ5OWQ1MiIsImp0aSI6IjUyMTE0ZjVjOTZiZTU0NzE4ZjI2M2I1ZjQ0MjU3MmVmNDRmMzQ1NTAzM2ViODgyYTY3OGZkNzQ1MjZmOWJjZmZhYzRiNmRmNDJhYzBlOWYyIiwiaWF0IjoxNjU4MzY1ODQ5LCJuYmYiOjE2NTgzNjU4NDksImV4cCI6MTY2MTA0NDI0OSwic3ViIjoiMTUzNzMxMzgiLCJzY29wZXMiOltdfQ.YitkXVdtYaY27WxfBTlBX9dywn6DXgjrylwUF_hk9PTM0P0DYrcWTIT_OnjtQy2DZzMOil_f8gBABPGtuPb3wdf-UtGAe84K_gcoIcDYw-6GQUjMmgaTqLFpyeTscZc3aCfuivDud7xya75gdiZ9CoHp8OpgnYBZvABPy0IIwiz4-tdYLj-ZndpwJgoEWonK0HfzHVdCjxo73uV8luxgsz8Pda5nCp6rWJX4rowOperv2PCXyH0fonYpYJLFtTNZrnh_vsZ5z4xn1NZrVgo5fbFsJ8PgpWun1VhKx5yjAv9MXqhQhElKLAxsTPROctSpHYrXC6kh2Shonoh-fq4zdw
+    token_type: Bearer
+    expires_in: 2678400
+    refresh_token: def502005be6e8f373c8e9df6fc9279a480114fe71773316d3477e04eee03179b7d1afcb5a08751e4a77b0933b5577a76afc2fba378bfb8e637857c8956fb5bc4d157d8c674b69bb34e6ef0ce7efd93631fba7db8eed1797147d319ff339df55ffca6ce30b595ab17a8f777b4f6403e2837dc6d900d651222183237608239e10969791256b9b5e60c4d9bbb917c8dc8afb58750aa8718c5698f02897d2b9719fef67e7cda2518c03401ffcb1543eebb8d002a3d26f826fb753b5eb348a90d12deeb5e135192e51b85f2a5172a2aa76dd4ed0aa9e587b55655af08f6aa920cad499e19babd575a54c7279d3aaba595df4a1b89e7e0d2403c192471e269b63741f2f8cc182195c0f028883ce8d3e30029345a054e9d3bc6535abfc6a2ac95c1717c5329ac2b0a6e59e11e0eb95efe55dbf8c4ed0db82f3351882f1715a0d1ae49ba478f8ae0f7aa82e9f18c0bebe3ea6aa46146f4c95599b01238ffd75d1c82a7aeee6bf78c2256d6bf8c53fd533e2d1903464b8975f6df51197fc0aec6b924214fb26a53b960aa73862
+webhooks:                                       # Can be individually specified per library as well
+  error:
+  run_start:
+  run_end:
+  collection_creation:
+  collection_addition:
+  collection_removal:
+  version:
+mdblist:
+  apikey: 1zvwuk7ql70gyfp42h1pbciny
+  cache_expiration: 60
+notifiarr:
+  apikey: 319544dd-f253-494b-8d19-1f2913d4a4b0          
