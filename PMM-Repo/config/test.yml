@@ -1,0 +1,244 @@
+libraries:
+  Movies:
+    metadata_path:
+    - git: PMM/award/bafta
+    - git: PMM/award/cannes
+    - git: PMM/award/choice
+    - git: PMM/award/golden
+    - git: PMM/award/oscars
+    - git: PMM/award/other
+    - git: PMM/award/spirit
+    - git: PMM/award/sundance
+    - git: PMM/chart/anilist
+    - git: PMM/chart/basic
+    - git: PMM/chart/imdb
+    - git: PMM/chart/myanimelist
+    - git: PMM/chart/other
+    - git: PMM/chart/tautulli
+    - git: PMM/chart/tmdb
+    - git: PMM/chart/trakt
+    - git: PMM/actor
+    - git: PMM/audio_language
+    - git: PMM/movie/content_rating_us           # Choose content_rating_uk or content_rating_us
+    - git: PMM/genre
+    - git: PMM/resolution_standards              # Choose resolution_standards or resolution
+    - git: PMM/studio
+    - git: PMM/subtitle_language
+    - git: PMM/year
+    - git: PMM/movie/country
+    - git: PMM/movie/decade
+    - git: PMM/movie/director
+    - git: PMM/movie/franchise
+    - git: PMM/movie/universe
+    - git: PMM/movie/producer
+    - git: PMM/movie/seasonal
+    - git: PMM/movie/streaming
+    - git: PMM/movie/writer
+    overlay_path:
+    - remove_overlays: false
+    - git: PMM/overlays/audio_codec
+    - git: PMM/overlays/audio_language
+    - git: PMM/overlays/direct_play
+    - git: PMM/overlays/imdb_top_250
+    - git: PMM/overlays/ratings
+    - git: PMM/overlays/resolution
+    - git: PMM/overlays/special_release
+    - git: PMM/overlays/streaming
+    - git: PMM/overlays/video_format
+  TV Shows:
+    metadata_path:
+    - git: PMM/award/choice
+    - git: PMM/award/golden
+    - git: PMM/award/emmy
+    - git: PMM/chart/anilist
+    - git: PMM/chart/basic
+    - git: PMM/chart/imdb
+    - git: PMM/chart/myanimelist
+    - git: PMM/chart/other
+    - git: PMM/chart/tautulli
+    - git: PMM/chart/tmdb
+    - git: PMM/chart/trakt
+    - git: PMM/actor
+    - git: PMM/audio_language
+    - git: PMM/show/content_rating_us            # Choose content_rating_uk or content_rating_us
+    - git: PMM/genre
+    - git: PMM/resolution_standards              # Choose resolution_standards or resolution
+    - git: PMM/studio
+    - git: PMM/subtitle_language
+    - git: PMM/year
+    - git: PMM/show/country
+    - git: PMM/show/decade
+    - git: PMM/show/network
+    - git: PMM/show/streaming
+    overlay_path:
+    - remove_overlays: false
+    - git: PMM/overlays/audio_codec
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        overlay_level: season
+    - git: PMM/overlays/audio_language
+    - git: PMM/overlays/audio_language
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/audio_language
+      template_variables:
+        overlay_level: season
+    - git: PMM/overlays/direct_play
+    - git: PMM/overlays/direct_play
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/direct_play
+      template_variables:
+        overlay_level: season
+    - git: PMM/overlays/ratings
+    - git: PMM/overlays/ratings
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/ratings
+      template_variables:
+        overlay_level: season
+    - git: PMM/overlays/resolution
+    - git: PMM/overlays/resolution
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/resolution
+      template_variables:
+        overlay_level: season
+    - git: PMM/overlays/special_release
+    - git: PMM/overlays/special_release
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/special_release
+      template_variables:
+        overlay_level: season
+    - git: PMM/overlays/streaming
+    - git: PMM/overlays/streaming
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/streaming
+      template_variables:
+        overlay_level: season
+    - git: PMM/overlays/video_format
+    - git: PMM/overlays/video_format
+      template_variables:
+        overlay_level: episode
+    - git: PMM/overlays/video_format
+      template_variables:
+        overlay_level: season
+playlist_files:
+- git: PMM/playlist
+settings:                                       # Can be individually specified per library as well
+  asset_depth: 5
+  asset_directory: config/assets
+  asset_folders: true
+  assets_for_all: true
+  cache: true
+  cache_expiration: 60
+  check_nightly: false
+  collection_minimum: 3
+  collection_order: release
+  create_asset_folders: true
+  custom_repo:
+  default_collection_order:
+  delete_below_minimum: true
+  delete_not_scheduled: true
+  dimensional_asset_rename: true
+  download_url_assets: true
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  missing_only_released: true
+  only_filter_missing: true
+  playlist_report: true
+  playlist_sync_to_users: all
+  prioritize_assets: true
+  released_missing_only: true
+  run_again_delay: 2
+  save_missing: true
+  save_report: true
+  show_asset_not_needed: true
+  show_filtered: true
+  show_missing: true
+  show_missing_assets: true
+  show_missing_episode_assets: true
+  show_missing_season_assets: true
+  show_options: false
+  show_unmanaged: true
+  sync_mode: sync
+  tvdb_language: eng
+  verify_ssl: true
+webhooks:                                       # Can be individually specified per library as well
+  error:
+  run_start:
+  run_end:
+  collection_creation:
+  collection_addition:
+  collection_removal:
+  version:
+plex:                                           # Can be individually specified per library as well
+  url: http://10.1.1.9:32400
+  token: <<OMITTEDD>>
+  timeout: 60
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:
+  apikey: <<OMITTEDD>>
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: http://10.1.1.218:8181/tautulli
+  apikey: <<OMITTEDD>>
+omdb:
+  apikey: <<OMITTEDD>>
+  cache_expiration: 60
+notifiarr:
+  apikey: <<OMITTEDD>>
+radarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.213:7878/radarr
+  token: <<OMITTEDD>>
+  version: v3
+  add: false
+  root_folder_path: /Videos/Movies
+  monitor: false
+  availability: announced
+  quality_profile: Ultra-HD
+  tag: Scripts-Meta-Manager
+  search: false
+  add_existing: false
+  upgrade_existing: false
+  radarr_path:
+  plex_path:
+sonarr:                                         # Can be individually specified per library as well
+  url: http://10.1.1.214:8989/sonarr
+  token: <<OMITTEDD>>
+  version: v3
+  add: false
+  root_folder_path: /Videos/TV Shows
+  monitor: none
+  quality_profile: Ultra-HD
+  language_profile: English
+  series_type: standard
+  season_folder: false
+  tag: Scripts-Meta-Manager
+  search: false
+  cutoff_search: false
+  add_existing: false
+  upgrade_existing: false
+  sonarr_path:
+  plex_path:
+trakt:
+  client_id: <<OMITTEDD>>
+  client_secret: <<OMITTEDD>>
+  authorization:
+    access_token: <<OMITTEDD>>
+    token_type: <<OMITTEDD>>
+    expires_in: <<OMITTEDD>>
+    refresh_token: <<OMITTEDD>>
+    scope: public
+    created_at: <<OMITTEDD>>
+  pin:

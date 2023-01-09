@@ -1,0 +1,1297 @@
+##########################################################################
+##########################################################################
+##                                                                      ##
+##         _____ _   _____     _____     _   _____         _            ##
+##        |     | |_|     |_ _| __  |___| |_|   __|___ ___| |_          ##
+##        |  |  |   | | | | | | __ -| .'|   |  |  | . |_ -|   |         ##
+##        |_____|_|_|_|_|_|_  |_____|__,|_|_|_____|___|___|_|_|         ##
+##                        |___|                                         ##
+##                                                                      ##
+##           ..Movie Library Collections YML Confg For..                ##
+##         https://github.com/meisnate12/Plex-Meta-Manager              ##
+##########################################################################
+##                         github.com/ohmybahgosh                       ##
+##########################################################################
+##                   -=My Trakt.tv Collection Lists=-                   ##
+##              _-=https://trakt.tv/users/hdlists/lists=-_              ##
+##########################################################################
+## Every Collection Comes With a Poster I Made & A Background I Grabbed ##
+###  BY NO MEANS AM I A GRAPHIC DESIGNER, SO FEEL FREE TO SWAP POSTERS ###
+##########################################################################
+# Collection Templates
+templates:
+  Genre:
+        plex_search:
+          genre: <<genre>>
+        url_poster: <<poster>>
+        sort_title: +++++++_<<collection_name>>
+        collection_order: alpha
+  Studio:
+        plex_search:
+          studio: <<studio>>
+        url_poster: <<poster>>
+        sort_title: +++++_<<collection_name>>
+        collection_order: alpha
+  Movie:
+        tmdb_collection: <<collection>>
+        tmdb_summary: <<summary>>
+        url_poster: <<poster>>
+        sort_title: ++++_<<collection_name>>
+        collection_order: release
+  people:
+        actor: tmdb
+        tmdb_person: <<person>>
+        sort_title: ++_<<collection_name>>
+        collection_order: release
+  tmdb:
+    optional:
+      - collections
+      - lists
+      - movies
+      - tmdb_summary
+      - summary
+    tmdb_collection: <<collections>>
+    tmdb_list: <<lists>>
+    tmdb_movie: <<movies>>
+    tmdb_summary: <<tmdb_summary>>
+    summary: <<summary>>
+    url_poster: <<poster>>
+    sort_title: <<collection_name>>
+    collection_order: release
+  imdb:
+    url_poster: <<poster>>
+    summary: <<summary>>
+    sync_mode: sync
+  Holiday:
+    url_poster: <<poster>>
+    sort_title: <<collection_name>>
+    collection_order: release
+  Collection:
+    optional:
+      - collection
+      - movie
+    tmdb_collection_details: <<collection>>
+    tmdb_movie: <<movie>>
+    sync_mode: sync
+    collection_order: release
+  Chart:
+    sort_title: +1_<<num>><<collection_name>>
+    sync_mode: sync
+    smart_label: random    
+# Collections
+collections:
+###########################
+#   Studio Collections    #
+###########################
+  DC Extended Universe:
+    template: {name: Studio, studio: "DC Extended Universe", poster: https://theposterdb.com/api/assets/92689}
+    summary: The DC Extended Universe (DCEU) is a series of superhero films, distributed by Warner Bros. Pictures and based on characters that appear in American comic books by DC Comics. The shared universe, much like the original DC Universe in comic books and the television programs, was established by crossing over common plot elements, settings, cast, and characters. 
+  Marvel Cinematic Universe:
+    template: {name: Studio, studio: "Marvel Enterprise, Marvel Entertainment, Marvel Studios", poster: https://theposterdb.com/api/assets/5912}
+    summary: The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics. The franchise includes comic books, short films, television series, and digital series. The shared universe, much like the original Marvel Universe in comic books, was established by crossing over common plot elements, settings, cast, and characters. The first MCU film is Iron Man (2008), which began the films of Phase One culminating in the crossover film The Avengers (2012). Phase Two began with Iron Man 3 (2013) and concluded with Ant-Man (2015). Phase Three began with Captain America - Civil War (2016) and concluded with Spider-Man - Far From Home (2019). The first three phases in the franchise are collectively known as "The Infinity Saga". The films of Phase Four will begin with Black Widow (2021) and are set to conclude with Guardians of the Galaxy Vol. 3 (2023).
+  Blue Sky Animation:
+    template: {name: Studio, studio: "Blue Sky Animation", poster: https://theposterdb.com/poster/33753}
+    summary: Blue Sky Studios, Inc. is an American computer animation film studio based in Greenwich, Connecticut. It is a subsidiary of 20th Century Animation, a division of Disney Studios Content.
+  DreamWorks:
+    template: {name: Studio, studio: "DreamWorks Animation, DreamWorks Pictures", poster: https://theposterdb.com/api/assets/52723}
+    summary: DreamWorks Animation LLC (also simply known as DreamWorks) is an American animation studio and a subsidiary of Universal Pictures, itself a subsidiary of Comcast's NBCUniversal. It is based in Glendale, California, and produces animated feature films, television programs, and online virtual games.
+  Illumination Entertainment:
+    template: {name: Studio, studio: "Illumination Entertainment", poster: https://theposterdb.com/api/assets/8158}
+    summary: Illumination is an American film and animation studio founded by Chris Meledandri in 2007 and owned by Universal Pictures, a division of NBCUniversal, which is itself a division of Comcast. Meledandri produces the films, while Universal finances and distributes all the films. The studio is responsible for the Despicable Me and The Secret Life of Pets franchises and the film adaptations of Dr. Seuss’ books The Lorax and How the Grinch Stole Christmas. The Minions, characters from the Despicable Me series, are the studio's mascots.
+  Pixar:
+    template: {name: Studio, studio: Pixar, poster: https://theposterdb.com/api/assets/38226}
+    summary: Pixar Animation Studios, commonly known as Pixar, is an American computer animation studio based in Emeryville, California, a subsidiary of Disney Studios Content owned by The Walt Disney Company. Pixar began in 1979 as part of the Lucasfilm computer division, known as the Graphics Group, before its spin-off as a corporation on February 3, 1986, with funding from Apple co-founder Steve Jobs, who became its majority shareholder. Disney purchased Pixar in 2006 at a valuation of $7.4 billion by converting each share of Pixar stock to 2.3 shares of Disney stock, a transaction that resulted in Jobs becoming Disney's largest single shareholder at the time. Pixar is best known for its feature films technologically powered by RenderMan, the company's own implementation of the industry-standard RenderMan Interface Specification image-rendering application programming interface. Luxo Jr., a desk lamp from the studio's 1986 short film of the same name, is the studio's mascot.
+  Sony Pictures Animation:
+    template: {name: Studio, studio: "Sony Pictures, Sony Pictures Television", poster: https://theposterdb.com/api/assets/131749}
+    summary: Sony Pictures Animation Inc. is an American animation studio owned by Sony Entertainment's Sony Pictures Entertainment through their Motion Picture Group division and founded on May 9, 2002. The studio's films are distributed worldwide by Sony Pictures Releasing under their Columbia Pictures label, while all direct-to-video releases are released by Sony Pictures Home Entertainment.
+  Walt Disney Animation Studios:
+    template: {name: Studio, studio: "Walt Disney Animation Studios", poster: https://theposterdb.com/api/assets/6016}
+    summary: Walt Disney Animation Studios (WDAS), sometimes shortened to Disney Animation, is an American animation studio that creates animated features and short films for The Walt Disney Company. Founded on October 16, 1923 by brothers Walt Disney and Roy O. Disney, it is one of the oldest-running animation studios in the world. It is currently organized as a division of Walt Disney Studios and is headquartered at the Roy E. Disney Animation Building at the Walt Disney Studios lot in Burbank, California.
+  Walt Disney Pictures:
+    template: {name: Studio, studio: "Walt Disney Pictures", poster: https://theposterdb.com/api/assets/16549}
+    summary: Walt Disney Pictures is an American film production studio of The Walt Disney Studios, which is owned by The Walt Disney Company. The studio is the flagship producer of live-action feature films within the Walt Disney Studios unit, and is based at the Walt Disney Studios in Burbank, California. Animated films produced by Walt Disney Animation Studios and Pixar Animation Studios are also released under this brand. Walt Disney Studios Motion Pictures distributes and markets the films produced by Walt Disney Pictures.
+  Warner Bros.:
+    template: {name: Studio, studio: "Warner Animation Group, Warner Bros., Warner Bros. Animation, Warner Bros. Pictures, Warner Independent Pictures (WIP)", poster: ttps://theposterdb.com/api/assets/47604}
+    summary: Warner Bros.is the third-oldest American movie studio in continuous operation, after Paramount Pictures was founded on May 8, 1912 as Famous Players Film Corporation, and Universal Studios founded on June 8, 1912. Warner Bros. incorporated on April 4, 1923.
+  Apple Originals 2021-2025:
+    smart_label: originally_available.desc
+    sync_mode: sync
+    sort_title: +++++++++++++++++++++_1APPLE
+    imdb_list:
+      url:   https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_series,tv_special,tv_miniseries,documentary,video,tv_short&release_date=2021-01-01,2025-12-31&genres=!animation&countries=us&languages=en&sort=release_date,desc&count=250&companies=co0546168
+    summary: All Apple TV Originals From 2021-2025
+    url_poster: https://i.imgur.com/O9iWork.png
+    url_background: https://wallpaper-house.com/data/out/8/wallpaper2you_228774.png
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+
+  Amazon Originals 2021-2025:
+    smart_label: originally_available.desc
+    sync_mode: sync
+    sort_title: +++++++++++++++++++++_1APPLE
+    imdb_list:
+      url:   https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_series,tv_special,tv_miniseries,documentary,video,tv_short&release_date=2021-01-01,2025-12-31&genres=!animation&countries=us&languages=en&sort=release_date,desc&count=250&companies=co0319272
+    summary: All Apple TV Originals From 2021-2025
+    url_poster: https://i.imgur.com/nU3gqqB.png
+    url_background: https://i.imgur.com/2jfs7oS.png
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+
+  Netflix Originals 2021-2025:
+    smart_label: originally_available.desc
+    sync_mode: sync
+    sort_title: +++++++++++++++++++++_1Netflix
+    imdb_list:
+      url: https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_series,tv_special,tv_miniseries,documentary,video,tv_short&release_date=2021-01-01,2025-12-31&genres=!animation&countries=us&languages=en&sort=release_date,desc&count=250&companies=co0144901
+    summary: All Netflix Originals From 2021-2025
+    url_poster: https://i.imgur.com/7kiE1MU.png
+    url_background: https://img5.goodfon.com/original/1920x1080/1/61/fon-netflix-logo-raduga-tsvet-fon-background-skachat-oboi-sk.jpg
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+
+  HBO Max Originals 2021-2025:
+    smart_label: originally_available.desc
+    sync_mode: sync
+    sort_title: +++++++++++++++++++++_1HBOMAX
+    imdb_list:
+      url: https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_series,tv_special,tv_miniseries,documentary,video,tv_short&release_date=2021-01-01,2025-12-31&genres=!animation&countries=us&languages=en&sort=release_date,desc&count=250&companies=co0754095
+    summary: All HULU Originals From 2021-2025
+    url_poster: https://i.redd.it/zxdvw3tk3f151.jpg
+    url_background: https://wallpapercave.com/wp/wp6402755.png
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+
+  HULU Originals 2021-2025:
+    smart_label: originally_available.desc
+    sync_mode: sync
+    sort_title: +++++++++++++++++++++_1HULU
+    imdb_list:
+      url: https://www.imdb.com/search/title/?title_type=feature,tv_movie,tv_series,tv_special,tv_miniseries,documentary,video,tv_short&release_date=2021-01-01,2025-12-31&genres=!animation&countries=us&languages=en&sort=release_date,desc&count=250&companies=co0218858
+    summary: All HULU Originals From 2021-2025
+    url_poster: https://plexcollectionposters.com/images/2019/05/26/Hulu6ddad752a5ce9bac.jpg
+    url_background: https://cdn.vox-cdn.com/thumbor/oR4hqrmTxbX_O4gdJ6np8h-PxFk=/0x439:750x861/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/56311701/Image_uploaded_from_iOS__8_.1503433270.jpg
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+
+  Top Ten Pirated Weekly:
+    trakt_list: https://trakt.tv/users/hdlists/lists/top-ten-pirated-movies-of-the-week-torrent-freak-com
+    smart_label: year.desc
+    sync_mode: sync
+    sort_title: +++++++++++++++++++++_1APirated Weekly
+    summary: Most Pirated Movies of The Week
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+    url_background: https://i.imgur.com/SOVfrIq.png
+    url_poster: https://i.imgur.com/dYdjSOu.png
+
+  Mindfuck Movies:
+    trakt_list:
+     - https://trakt.tv/users/hdlists/lists/mindfuck-movies
+     - https://trakt.tv/users/benfranklin/lists/best-mindfucks
+    smart_label: critic_rating.desc
+    sync_mode: sync
+    sort_title: ++++++++++++++++++_Mindfuck Movies
+    summary: There’s nothing greater than a film that makes you think. A film that lingers on your mind long after the credits have rolled and is the subject of many conversation and discussion. Trying to piece together the puzzle of what you saw and coming to a conclusion that makes sense or still doesn’t add up.
+    url_poster: https://i.imgur.com/Tl6QMgA.png
+    url_background: https://i.imgur.com/DM1Im1X.jpeg
+
+  Best Picture Nominees (2021 Academy Awards):
+    trakt_list: https://trakt.tv/users/hdlists/lists/2021-academy-award-nominated-for-best-picture-93rd-academy-awards-oscar-s
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_Oscar Nominated Best Picture Movies 2021
+    summary: The 93rd Academy Awards ceremony is scheduled to take place on April 25, more than two months later than last year’s ceremony. The awards will recognize films released during a year in which movie theaters were largely closed.  Streaming services, which were already on the rise as an awards-season presence, are poised to dominate in April, both with their own productions (like Netflix’s “Mank”) and with traditional studio films that were released through streaming platforms because of the pandemic (like Searchlight Pictures’s “Nomadland,” which is streaming on Hulu).
+    url_poster: https://i.imgur.com/HhpBvRR.png
+    url_background: https://i.imgur.com/0Kao9gY.jpeg 
+
+  Oscar Nominated Movies (2021 Academy Awards):
+    trakt_list: https://trakt.tv/users/hdlists/lists/2021-academy-award-nominated-movies-93rd-academy-awards-oscar-s
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_Oscar Nominated Movies 2021
+    summary: The 93rd Academy Awards ceremony is scheduled to take place on April 25, more than two months later than last year’s ceremony. The awards will recognize films released during a year in which movie theaters were largely closed.  Streaming services, which were already on the rise as an awards-season presence, are poised to dominate in April, both with their own productions (like Netflix’s “Mank”) and with traditional studio films that were released through streaming platforms because of the pandemic (like Searchlight Pictures’s “Nomadland,” which is streaming on Hulu).
+    url_poster: https://i.imgur.com/H05ESeK.png
+    url_background: https://i.imgur.com/0Kao9gY.jpeg
+    
+  Nostalgia Collection (Classics From The 80s & 90s):
+    trakt_list: https://trakt.tv/users/hdlists/lists/nostalgiac-movies-from-the-80s-90s
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_Nostalgia Collection
+    summary: All The Nostalgiac Movies From The 80s & 90s in One Collection
+    url_poster: https://i.imgur.com/vE8dsdd.jpg
+    url_background: https://i.imgur.com/frz0kly.jpg
+    
+  Outer Space Movie Collection:
+    trakt_list: https://trakt.tv/users/hdlists/lists/outer-space-space-exploration-movies
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_Outer Space Movie Collection
+    summary: Movies That Take Place in Outer Space
+    url_poster: https://i.imgur.com/tOujJnS.jpg
+    url_background: https://i.imgur.com/CUIrEWQ.jpg
+    
+  Documentary Collection:
+    trakt_list: https://trakt.tv/users/hdlists/lists/documentary-movies-top-rated-from-1980-to-today
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_Documentary Collection
+    summary: Top Rated Documentaries from 1980 onward
+    url_poster: https://i.imgur.com/2AtAgce.jpg
+    url_background: https://i.imgur.com/lJQwoDH.jpg
+    
+  Parody Movie Collection:
+    trakt_list: https://trakt.tv/users/hdlists/lists/top-50-parody-movies-of-all-time
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_Parody Movie Collection
+    summary: Top 50 Parody Movies of All Time
+    url_poster: https://i.imgur.com/yFtJ5eV.png
+    url_background: https://i.imgur.com/eELv4eB.jpg
+    
+  Sundance Film Festival 2021:
+    trakt_list: https://trakt.tv/users/hdlists/lists/sundance-2021-movie-guide
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_Sundance 2021 Collection
+    summary: Sundance Film Festival 2021 Movie Guide
+    url_poster: https://i.imgur.com/6CqlOaq.png
+    url_background: https://i.imgur.com/goapGVl.jpg
+    
+  Most Popular Movies of 2020:
+    trakt_list: https://trakt.tv/users/hdlists/lists/most-popular-movies-of-2020
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_20z20 Most popular
+    summary: The Most Popular Movies of 2020
+    url_poster: https://i.imgur.com/LLURmaF.png
+    url_background: https://i.imgur.com/gO3Rlft.jpg
+    
+  Highest Rated Movies of 2021:
+    trakt_list: https://trakt.tv/users/hdlists/lists/2021-best-rated-movies-so-far
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_12021 Top Rated popular
+    summary: The Top Rated Movies of 2021 on RottenTomatoes.com
+    url_poster: https://i.imgur.com/w7Ucfa5.png
+    url_background: https://i.imgur.com/trITIgI.jpg
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+    
+  Top Movies of 2021:
+    trakt_list: https://trakt.tv/users/hdlists/lists/top-movies-for-2021
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: ++++++++++++++++++_2021 Top Movies
+    summary: Top Movies of 2021
+    url_poster: https://i.imgur.com/qnfjiew.png
+    url_background: https://i.imgur.com/aiRCYHH.jpg
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+    
+  Trending:  
+    trakt_trending: 40
+    tmdb_trending_daily: 40
+    tmdb_trending_weekly: 40
+    sort_title: +++++++++++++++++++_1Trending
+    sync_mode: sync
+    smart_label: year.desc
+    summary: Movies Trending across the internet
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+    url_background: https://i.imgur.com/SOVfrIq.png
+    url_poster: https://i.imgur.com/4vpMZoA.png
+    
+  Popular:
+    tmdb_popular: 40
+    imdb_list:
+      url: https://www.imdb.com/search/title/?title_type=feature,tv_movie,documentary,short
+      limit: 40
+    sort_title: +++++++++++++++++++_2Popular
+    sync_mode: sync
+    smart_label: year.desc
+    summary: Popular Movies across the internet
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+    url_background: https://i.imgur.com/SOVfrIq.png
+    url_poster: https://i.imgur.com/4cI2Jg4.png
+    
+  Top Rated:
+    imdb_list: https://www.imdb.com/search/title/?groups=top_250&count=250
+    tmdb_top_rated: 250
+    sort_title: +++++++++++++++++++_3Top Rated
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    summary: Top Rated Movies
+    url_background: https://i.imgur.com/b26VZ9y.jpg
+    url_poster: https://i.imgur.com/x7BhedD.png
+    radarr_add: false
+    radarr_search: false
+    radarr_monitor: false
+    
+  True Crime Documentaries:
+    trakt_list: https://trakt.tv/users/hdlists/lists/true-crime-documentaries
+    sync_mode: sync
+    smart_label: year.desc
+    sort_title: ++++++++++++++++++_True Crime Documentaries Movies
+    summary: True Crime Documentaries
+    url_poster: https://i.imgur.com/PPbzaKa.png
+    url_background: https://i.imgur.com/SOVfrIq.png
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+
+  Best Superhero Movies:
+    trakt_list: https://trakt.tv/users/hdlists/lists/best-superhero-movies
+    sort_title: +++++++++++++++++++++_Superhero Movies
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    summary: Best Superhero Movies of All Time
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+    url_poster: https://i.imgur.com/lqXRQdd.png
+    
+  Movies People are Watching:
+    trakt_list: https://trakt.tv/users/hdlists/lists/top-films-everyone-s-watching
+    sort_title: +++++++++++++++++++++_Everyones Watching
+    sync_mode: sync
+    smart_label: year.desc
+    summary: Movies That Everyone is Watching
+    radarr_add: true
+    radarr_search: true
+    radarr_monitor: true
+    url_poster: https://i.imgur.com/GQca9tU.png
+  James Bond:
+    template: {name: tmdb, movies: 12208, collections: 645, tmdb_summary: 645, poster: https://theposterdb.com/api/assets/67529}
+  American Pie:
+    template: {name: tmdb, collections: "2806, 298820", tmdb_summary: 2806, poster: https://theposterdb.com/api/assets/68418}
+  The Bourne Collection:
+    template: {name: tmdb, collections: 31562, tmdb_summary: 31562, poster: https://theposterdb.com/api/assets/5420}
+  The Fast and the Furious:
+    template: {name: tmdb, collections: "9485", tmdb_summary: 9485, poster: https://theposterdb.com/api/assets/10036}
+  Disney Animation:
+    template: {name: tmdb, lists: "7103808, 7103807", summary: "A collection of Disney Animation movies.", poster: https://theposterdb.com/api/assets/68411}
+  Disney Fairies:
+    template: {name: tmdb, collections: "315595", tmdb_summary: 315595, poster: https://theposterdb.com/api/assets/167996}
+  Disney ReImaginings:
+    template: {name: imdb, summary: "Live-action remakes produced by Walt Disney Pictures of its animated films.", poster: https://theposterdb.com/api/assets/68410}
+    imdb_list:
+      - https://www.imdb.com/list/ls083312980/
+  Christmas:
+    template: {name: Holiday, summary: "Christmas film is a genre that revolves around the plot involving Christmas.", poster: https://theposterdb.com/api/assets/111695}
+    trakt_list:
+      - https://trakt.tv/users/movistapp/lists/christmas-movies
+      - https://trakt.tv/users/2borno2b/lists/christmas-movies-extravanganza
+    imdb_list:
+      - https://www.imdb.com/list/ls025976544/
+      - https://www.imdb.com/list/ls003863000/
+      - https://www.imdb.com/list/ls027454200/
+      - https://www.imdb.com/list/ls027886673/
+      - https://www.imdb.com/list/ls097998599/
+      - https://www.imdb.com/list/ls066252180/
+      - https://www.imdb.com/list/ls031348568/
+  "Mission: Impossible":
+    template: {name: tmdb, collections: "87359", tmdb_summary: 87359, poster: https://theposterdb.com/api/assets/12118}
+  The Muppets:
+    template: {name: imdb, summary: "The Muppets Movies", poster: "https://theposterdb.com/api/assets/205"}
+    imdb_list:
+      - https://www.imdb.com/list/ls068314869/
+  Pirates of the Caribbean:
+    template: {name: tmdb, collections: "295", tmdb_summary: 295, poster: https://theposterdb.com/api/assets/71934}
+  Terminator:
+    template: {name: tmdb, collections: "528", tmdb_summary: 528, poster: https://theposterdb.com/api/assets/26461}
+  Transformers:
+    template: {name: tmdb, collections: "8650", movies: 424783, tmdb_summary: 8650, poster: https://theposterdb.com/api/assets/33217}
+  Underworld:
+    template: {name: tmdb, collections: "2326", tmdb_summary: 2326, poster: https://theposterdb.com/api/assets/74996}
+  The Wizarding World:
+    template: {name: imdb, summary: "The Wizarding World", poster: "https://theposterdb.com/api/assets/151007"}
+    imdb_list:
+      - https://www.imdb.com/list/ls060991914/
+  X-Men:
+    template: {name: imdb, summary: "A superhero film series about a team of mutant superheroes based on the Marvel Comics superheroes of the same name.", poster: "https://theposterdb.com/api/assets/32304"}
+    imdb_list:
+      - https://www.imdb.com/list/ls024445822/
+  Teenage Mutant Ninja Turtles:
+    template: {name: tmdb, collections: "1582, 401562", movies: "1273", tmdb_summary: 1582, poster: https://theposterdb.com/api/assets/59350}
+  Star Wars:
+    template: {name: tmdb, collections: "10", movies: "348350, 330459", tmdb_summary: 10, poster: https://theposterdb.com/api/assets/5846}
+    plex_search:
+      title: "Star Wars"
+
+  Oscars:
+    template: { name: Chart, num: 5 }
+    imdb_list: https://www.imdb.com/search/title/?title_type=feature,documentary&groups=oscar_winner
+    summary: Oscar Winning Movies
+
+###########################
+#    Genre Collections    #
+###########################
+  Action:
+    template: {name: Genre, genre: Action/Adventure, poster: https://theposterdb.com/api/assets/52018}
+    summary: Action film is a genre wherein physical action takes precedence in the storytelling. The film will often have continuous motion and action including physical stunts, chases, fights, battles, and races. The story usually revolves around a hero that has a goal, but is facing incredible odds to obtain it.
+  Adventure:
+    template: {name: Genre, genre: Action/Adventure, poster: https://theposterdb.com/api/assets/52218}
+    summary: Adventure film is a genre that revolves around the conquests and explorations of a protagonist. The purpose of the conquest can be to retrieve a person or treasure, but often the main focus is simply the pursuit of the unknown. These films generally take place in exotic locations and play on historical myths. Adventure films incorporate suspenseful puzzles and intricate obstacles that the protagonist must overcome in order to achieve the end goal.  
+  Animation:
+    template: {name: Genre, genre: Animation, poster: https://theposterdb.com/api/assets/120090}
+    summary: Animated film is a collection of illustrations that are photographed frame-by-frame and then played in a quick succession. Since its inception, animation has had a creative and imaginative tendency. Being able to bring animals and objects to life, this genre has catered towards fairy tales and children’s stories. However, animation has long been a genre enjoyed by all ages. As of recent, there has even been an influx of animation geared towards adults. Animation is commonly thought of as a technique, thus it’s ability to span over many different genres.
+  Anime:
+    template: {name: Genre, genre: Anime, poster: https://theposterdb.com/api/assets/126743}
+    summary: A collection of Anime movies
+  Biography:
+    template: {name: Genre, genre: Biography, poster: https://theposterdb.com/api/assets/60369}
+    summary: A collection of Biography movies
+  Comedy:
+    template: {name: Genre, genre: Comedy, poster: https://theposterdb.com/api/assets/51397}
+    summary: Comedy is a genre of film that uses humor as a driving force. The aim of a comedy film is to illicit laughter from the audience through entertaining stories and characters. Although the comedy film may take on some serious material, most have a happy ending. Comedy film has the tendency to become a hybrid sub-genre because humor can be incorporated into many other genres. Comedies are more likely than other films to fall back on the success and popularity of an individual star.
+  Crime:
+    template: {name: Genre, genre: Crime, poster: https://theposterdb.com/api/assets/53057}
+    summary: Crime film is a genre that revolves around the action of a criminal mastermind. A Crime film will often revolve around the criminal himself, chronicling his rise and fall. Some Crime films will have a storyline that follows the criminal's victim, yet others follow the person in pursuit of the criminal. This genre tends to be fast paced with an air of mystery – this mystery can come from the plot or from the characters themselves.
+  Documentary:
+    template: {name: Genre, genre: Documentary, poster: https://theposterdb.com/api/assets/51430}
+    summary: Documentary film is a non-fiction genre intended to document reality primarily for the purposes of instruction, education, or maintaining a historical record.
+  Drama:
+    template: {name: Genre, genre: Drama, poster: https://theposterdb.com/api/assets/52016}
+    summary: Drama film is a genre that relies on the emotional and relational development of realistic characters. While Drama film relies heavily on this kind of development, dramatic themes play a large role in the plot as well. Often, these dramatic themes are taken from intense, real life issues. Whether heroes or heroines are facing a conflict from the outside or a conflict within themselves, Drama film aims to tell an honest story of human struggles.
+  Family:
+    template: {name: Genre, genre: Family, poster: https://theposterdb.com/api/assets/53059}
+    summary: Fantasy film is a genre that incorporates imaginative and fantastic themes. These themes usually involve magic, supernatural events, or fantasy worlds. Although it is its own distinct genre, these films can overlap into the horror and science fiction genres. Unlike science fiction, a fantasy film does not need to be rooted in fact. This element allows the audience to be transported into a new and unique world. Often, these films center on an ordinary hero in an extraordinary situation.
+  Fantasy:
+    template: {name: Genre, genre: Animation, poster: https://theposterdb.com/api/assets/51476}
+    imdb_list:
+    - url: https://www.imdb.com/search/title/?title_type=feature&release_date=1990-01-01,&user_rating=5.0,10.0&num_votes=100000,&genres=fantasy
+      limit: 100
+    - url: https://www.imdb.com/search/title/?title_type=feature&release_date=1990-01-01,&user_rating=5.0,10.0&num_votes=100000,&genres=fantasy&sort=user_rating,desc
+      limit: 100
+    summary: Fantasy film is a genre that incorporates imaginative and fantastic themes. These themes usually involve magic, supernatural events, or fantasy worlds. Although it is its own distinct genre, these films can overlap into the horror and science fiction genres. Unlike science fiction, a fantasy film does not need to be rooted in fact. This element allows the audience to be transported into a new and unique world. Often, these films center on an ordinary hero in an extraordinary situation.
+  Gangster:
+    template: {name: Genre, poster: https://theposterdb.com/api/assets/62561}
+    imdb_list:
+      - https://www.imdb.com/list/ls026270180/
+      - https://www.imdb.com/list/ls000093502/
+    summary: Gangster film is a sub-genre of crime films that center on organized crime or the mafia. Often the plot revolves around the rise and fall of an organized crime leader. Many Gangster films explore the destructive nature of organized crime, while others attempt to show the humanity of the individual characters.
+  History:
+    template: {name: Genre, genre: History, poster: https://theposterdb.com/api/assets/58022}
+    summary: History film is a genre that takes historical events and people and interprets them in a larger scale. Historical accuracy is not the main focus, but rather the telling of a grandiose story. The drama of an History film is often accentuated by a sweeping musical score, lavish costumes, and high production value.
+  Horror:
+    template: {name: Genre, genre: Horror, poster: https://theposterdb.com/api/assets/51475}
+    summary: Horror film is a genre that aims to create a sense of fear, panic, alarm, and dread for the audience. These films are often unsettling and rely on scaring the audience through a portrayal of their worst fears and nightmares. Horror films usually center on the arrival of an evil force, person, or event. Many Horror films include mythical creatures such as ghosts, vampires, and zombies. Traditionally, Horror films incorporate a large amount of violence and gore into the plot. Though it has its own style, Horror film often overlaps into Fantasy, Thriller, and Science-Fiction genres.
+  Martial Arts:
+    template: {name: Genre, poster: https://theposterdb.com/api/assets/51773}
+    imdb_list:
+      - https://www.imdb.com/list/ls000099643/
+      - https://www.imdb.com/list/ls068611186/
+      - https://www.imdb.com/list/ls068378513/
+      - https://www.imdb.com/list/ls090404120/
+    summary: Martial Arts film is a sub-genre of action films that feature numerous martial arts combat between characters. These combats are usually the films' primary appeal and entertainment value, and often are a method of storytelling and character expression and development. Martial Arts are frequently featured in training scenes and other sequences in addition to fights. Martial Arts films commonly include other types of action, such as hand-to-hand combat, stuntwork, chases, and gunfights.  
+  Music:
+    template: {name: Genre, poster: https://theposterdb.com/api/assets/51398}
+    imdb_list:
+    - url: https://www.imdb.com/search/title/?title_type=feature&release_date=1990-01-01,&user_rating=5.0,10.0&num_votes=100000,&genres=music
+      limit: 200
+    - url: https://www.imdb.com/search/title/?title_type=feature&release_date=1990-01-01,&user_rating=5.0,10.0&num_votes=100000,&genres=music&sort=user_rating,desc
+      limit: 200
+    summary: Music film is genre that revolves around music being an integral part of the characters lives.
+  Musical:
+    template: {name: Genre, genre: Musical, poster: https://theposterdb.com/api/assets/51427}
+    summary: A Musical interweaves vocal and dance performances into the narrative of the film. The songs of a film can either be used to further the story or simply enhance the experience of the audience. These films are often done on a grand scale and incorporate lavish costumes and sets. Traditional musicals center on a well-known star, famous for their dancing or singing skills (i.e. Fred Astaire, Gene Kelly, Judy Garland). These films explore concepts such are love and success, allowing the audience to escape from reality.
+  Mystery:
+    template: {name: Genre, genre: Mystery, poster: https://theposterdb.com/api/assets/53060}
+    summary: A Mystery film centers on a person of authority, usually a detective, that is trying to solve a mysterious crime. The main protagonist uses clues, investigation, and logical reasoning. The biggest element in these films is a sense of “whodunit” suspense, usually created through visual cues and unusual plot twists.
+  Pandemic:
+    template: {name: Genre, poster: https://theposterdb.com/api/assets/55837}
+    imdb_list: https://www.imdb.com/list/ls092321048/
+    summary: A Pandemic film resolves around widespread viruses, plagues, and diseases.
+  Romance:
+    template: {name: Genre, genre: Romance, poster: https://theposterdb.com/api/assets/53062}
+    summary: "Romance film can be defined as a genre wherein the plot revolves around the love between two protagonists. This genre usually has a theme that explores an issue within love, including but not limited to: love at first sight, forbidden love, love triangles, and sacrificial love. The tone of Romance film can vary greatly. Whether the end is happy or tragic, Romance film aims to evoke strong emotions in the audience."
+  Science Fiction:
+    template: {name: Genre, genre: Science Fiction, poster: https://theposterdb.com/api/assets/51772}
+    summary: Science Fiction (Sci-Fi) film is a genre that incorporates hypothetical, science-based themes into the plot of the film. Often, this genre incorporates futuristic elements and technologies to explore social, political, and philosophical issues. The film itself is usually set in the future, either on earth or in space. Traditionally, a Science Fiction film will incorporate heroes, villains, unexplored locations, fantastical quests, and advanced technology.
+  Short:
+    template: {name: Genre, genre: Short, poster: https://theposterdb.com/api/assets/53063}
+    summary: A collection of Short movies
+  Sports:
+    template: {name: Genre, poster: https://theposterdb.com/api/assets/60371}
+    imdb_list:
+    - url: https://www.imdb.com/search/title/?title_type=feature&release_date=1990-01-01,&user_rating=5.0,10.0&num_votes=100000,&genres=sport
+      limit: 200
+    - url: https://www.imdb.com/search/title/?title_type=feature&release_date=1990-01-01,&user_rating=5.0,10.0&num_votes=100000,&genres=sport&sort=user_rating,desc
+      limit: 200
+    summary: A Sport Film revolves around a sport setting, event, or an athlete. Often, these films will center on a single sporting event that carries significant importance. Sports films traditionally have a simple plot that builds up to the significant sporting event. This genre is known for incorporating film techniques to build anticipation and intensity. Sport films have a large range of sub-genres, from comedies to dramas, and are more likely than other genres to be based true-life events.
+  Stand Up Comedy:
+    template: {name: Genre, poster: https://theposterdb.com/api/assets/49137}
+    imdb_list:
+      - https://www.imdb.com/list/ls070221411/
+      - https://www.imdb.com/list/ls086584751/
+      - https://www.imdb.com/list/ls086022668/
+      - https://www.imdb.com/list/ls049792208/
+    summary: Stand-up comedy is a comedic style in which a comedian performs in front of a live audience, speaking directly to them through a microphone. Comedians give the illusion that they are dialoguing, but in actuality, they are monologuing a grouping of humorous stories, jokes and one-liners, typically called a shtick, routine, act, or set. Some stand-up comedians use props, music or magic tricks to enhance their acts. Stand-up comedians perform quasi-autobiographical and fictionalized extensions of their offstage selves.
+  Sword & Sorcery:
+    template: {name: Genre, poster: https://theposterdb.com/api/assets/74604}
+    imdb_list: https://www.imdb.com/list/ls022909805
+    summary: Sword and Sorcery film is a sub-genre of Fantasy that tend to be more plot-driven. These films rely on heavy action and battle scenes. Common themes in Sword and Sorcery films include a rescue mission, saving a princess, and battling a fantastical monster. The worlds and characters in these films are often much less developed than in other fantasy sub-genres. Of all the Fantasy sub-genres, Sword and Sorcery is most likely to be geared towards a younger audience, as many of these films are animated.
+  Sport:
+    template: {name: Genre, genre: Sport, poster: https://theposterdb.com/api/assets/60371}
+    summary: A Sport Film revolves around a sport setting, event, or an athlete. Often, these films will center on a single sporting event that carries significant importance. Sports films traditionally have a simple plot that builds up to the significant sporting event. This genre is known for incorporating film techniques to build anticipation and intensity. Sport films have a large range of sub-genres, from comedies to dramas, and are more likely than other genres to be based true-life events.
+  Thriller:
+    template: {name: Genre, genre: Thriller, poster: https://theposterdb.com/api/assets/52019}
+    summary: Thriller Film is a genre that revolves around anticipation and suspense. The aim for Thrillers is to keep the audience alert and on the edge of their seats. The protagonist in these films is set against a problem – an escape, a mission, or a mystery. No matter what sub-genre a Thriller film falls into, it will emphasize the danger that the protagonist faces. The tension with the main problem is built on throughout the film and leads to a highly stressful climax.
+  War:
+    template: {name: Genre, genre: War, poster: https://theposterdb.com/api/assets/51477}
+    summary: War Film is a genre that looks at the reality of war on a grand scale. They often focus on landmark battles as well as political issues within war. This genre usually focuses on a main character and his team of support, giving the audience an inside look into the gritty reality of war.
+  Western:
+    template: {name: Genre, genre: Western, poster: https://theposterdb.com/api/assets/51774}
+    summary: "Western Film is a genre that revolves around stories primarily set in the late 19th century in the American Old West. Most Westerns are set between the American Civil War (1865) and the early 1900s. Common themes within Western Film include: the conquest of the wild west, the cultural separation of the East and the West, the West’s resistance to modern change, the conflict between Cowboys and Indians, outlaws, and treasure/gold hunting. American Western Film usually revolves around a stoic hero and emphasizes the importance of honor and sacrifice."
+###########################
+#  Holliday Collections   #
+###########################
+
+###########################
+#    Decade Collections   #
+###########################
+###########################
+#     Trakt Trending      #
+###########################
+  Trakt Trending:
+    trakt_trending: 50
+    sort_title: +++++++++_Trakt Trending
+###########################
+#    People Collections   #
+###########################
+###########################
+#     Movie Collections   #
+###########################
+  101 Dalmatians:
+    template: {name: Collection, collection: 100693}
+  101 Dalmatians (Live-Action):
+    template: {name: Collection, collection: 124916}
+  28 Days/Weeks Later:
+    template: {name: Collection, collection: 1565}
+    name_mapping: 28 Days-Weeks Later
+  3 Ninja:
+    template: {name: Collection, collection: 71458}
+  "300":
+    template: {name: Collection, collection: 125570}
+  Addams Family:
+    template: {name: Collection, collection: 11716}
+  Air Bud:
+    template: {name: Collection, collection: 97445}
+  Aladdin:
+    template: {name: Collection, collection: 86027}
+  Alice in Wonderland:
+    template: {name: Collection, collection: 261307}
+  Alien:
+    template: {name: Collection, collection: "8091, 135416"}
+  All Dogs Go to Heaven:
+    template: {name: Collection, collection: 140910}
+  Almighty:
+    template: {name: Collection, collection: 124949}
+  Alvin and the Chipmunks:
+    template: {name: Collection, collection: 167613}
+  The Amazing Spider-Man:
+    template: {name: Collection, collection: 125574}
+  American Psycho:
+    template: {name: Collection, collection: 86105}
+  An American Tail:
+    template: {name: Collection, collection: 8783}
+  Anaconda:
+    template: {name: Collection, collection: 105995, movie: 336560}
+  Anchorman:
+    template: {name: Collection, collection: 93791}
+  Angels in the ...:
+    template: {name: Collection, collection: 508334}
+    name_mapping: Angels in the
+  The Angry Birds:
+    template: {name: Collection, collection: 531315}
+  Annabelle:
+    template: {name: Collection, collection: 402074}
+  Ant-Man:
+    template: {name: Collection, collection: 422834}
+  Appleseed:
+    template: {name: Collection, collection: "87800, 371526"}
+  Atlantis:
+    template: {name: Collection, collection: 100965}
+  Attack on Titan:
+    template: {name: Collection, collection: 370411}
+  Austin Powers:
+    template: {name: Collection, collection: 1006}
+  The Avengers:
+    template: {name: Collection, collection: 86311}
+  AVP:
+    template: {name: Collection, collection: 115762}
+  Babe:
+    template: {name: Collection, collection: 9435}
+  Back to the Future:
+    template: {name: Collection, collection: 264}
+  Bad Boys:
+    template: {name: Collection, collection: 14890}
+  Bad Moms:
+    template: {name: Collection, collection: 487376}
+  Bad Santa:
+    template: {name: Collection, collection: 423173}
+  Balto:
+    template: {name: Collection, collection: 117693}
+  Bambi:
+    template: {name: Collection, collection: 87250}
+  Barbershop:
+    template: {name: Collection, collection: 176097, movie: 14177}
+  Batman:
+    template: {name: Collection, collection: 120794}
+  Batman (Adam West) Animation:
+    template: {name: Collection, collection: 626517}
+  Beauty and the Beast:
+    template: {name: Collection, collection: 153010}
+  Bill & Ted's Most Excellent:
+    template: {name: Collection, collection: 91746}
+  Black Water:
+    template: {name: Collection, collection: 730166}
+  Blade:
+    template: {name: Collection, collection: 735}
+  Blade Runner:
+    template: {name: Collection, collection: 422837}
+  The Blues Brothers:
+    template: {name: Collection, collection: 112636}
+  The Boondock Saints:
+    template: {name: Collection, collection: 87186}
+  Borat Moviefilms:
+    template: {name: Collection, collection: 747168}
+  The Bourne:
+    template: {name: Collection, collection: 31562}
+  The Boy:
+    template: {name: Collection, collection: 666337}
+  Bring It On:
+    template: {name: Collection, collection: 430186}
+  Brother Bear:
+    template: {name: Collection, collection: 96472}
+  The Buddies:
+    template: {name: Collection, collection: 91657}
+  Captain America:
+    template: {name: Collection, collection: 131295}
+  Carrie:
+    template: {name: Collection, collection: 257053}
+  Cars:
+    template: {name: Collection, collection: 87118}
+  Charlie Brown:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls054850259/
+    summary: Collection of Movies and TV Specials with the beloved Peanuts characters.
+  Charlie's Angels:
+    template: {name: Collection, collection: 86029}
+  Cheaper by the Dozen:
+    template: {name: Collection, collection: 114783}
+  The Chronicles of Narnia:
+    template: {name: Collection, collection: 420}
+  The Chronicles of Riddick:
+    template: {name: Collection, collection: 2794}
+  Cinderella:
+    template: {name: Collection, collection: 55419}
+  Cinderella Story:
+    template: {name: Collection, collection: 437451}
+  City Slickers:
+    template: {name: Collection, collection: 150156}
+  Clash of the Titans:
+    template: {name: Collection, collection: 86780}
+  Clerks:
+    template: {name: Collection, collection: 182813}
+  Cloudy with a Chance of Meatballs:
+    template: {name: Collection, collection: 177467}
+  Cloverfield:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls021933730/
+    summary: Cloverfield is an American science fiction anthology film series and media franchise created and produced by J. J. Abrams consisting of three films, viral marketing websites linking the films together, and a tie-in manga to the first film titled Cloverfield/Kishin (2008), all set in a shared fictional universe referred to as the "Cloververse". The franchise as a whole deals with creatures from other dimensions attacking Earth throughout various decades, all as a repercussion of an experiment by an astronaut team aboard the Cloverfield Station in outer-space. Each film depicts the reality-altering effects of their study, which was meant to find a new energy source replacing the planet's depleted resources, only to open portals for assault from various beasts from deep space.
+  The Conjuring:
+    template: {name: Collection, collection: 313086}
+  Cornetto Trilogy:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls068623110/
+    summary: An anthology series of British comedic genre films directed by Edgar Wright, written by Wright and Simon Pegg, produced by Nira Park, and starring Pegg and Nick Frost. The trilogy consists of Shaun of the Dead (2004), Hot Fuzz (2007), and The World's End (2013).
+  Creed:
+    template: {name: Collection, collection: 553717}
+  Crocodile Dundee:
+    template: {name: Collection, collection: 9332}
+  The Croods:
+    template: {name: Collection, collection: 464577}
+  Crouching Tiger, Hidden Dragon:
+    template: {name: Collection, collection: 290973}
+  Daddy's Home:
+    template: {name: Collection, collection: 473971}
+  The Dark Knight:
+    template: {name: Collection, collection: 263}
+  DC Super Hero Girls:
+    template: {name: Collection, collection: "477208, 557495"}
+  Deadpool:
+    template: {name: Collection, collection: 448150, movie: 567604}
+  Death Note:
+    template: {name: Collection, collection: 102019}
+  Death Race:
+    template: {name: Collection, collection: 86116}
+  The Debt Collector:
+    template: {name: Collection, collection: 709271}
+  Despicable Me:
+    template: {name: Collection, collection: "86066, 544669"}
+  Die Hard:
+    template: {name: Collection, collection: 1570}
+  Dirty Harry:
+    template: {name: Collection, collection: 10456}
+  Divergent:
+    template: {name: Collection, collection: 283579}
+  A Dog's Purpose:
+    template: {name: Collection, collection: 591028}
+  DragonHeart:
+    template: {name: Collection, collection: 169452}
+  Dumb and Dumber:
+    template: {name: Collection, collection: 96665}
+  Dungeons & Dragons:
+    template: {name: Collection, collection: 106498}
+  The Emperor's New Groove:
+    template: {name: Collection, collection: 178117}
+  The Equalizer:
+    template: {name: Collection, collection: 523855}
+  Escape From ...:
+    template: {name: Collection, collection: 115838}
+    name_mapping: Escape From
+  Escape Plan:
+    template: {name: Collection, collection: 525891}
+  Evangelion:
+    template: {name: Collection, collection: 210303}
+    summary: A Japanese animated film series and a retelling of the original Neon Genesis Evangelion anime television series, produced by Studio Khara. Hideaki Anno served as the writer and general manager of the project, with Kazuya Tsurumaki and Masayuki directing the films themselves. Yoshiyuki Sadamoto, Ikuto Yamashita and Shiro Sagisu returned to provide character designs, mechanical designs and music respectively.
+  The Expendables:
+    template: {name: Collection, collection: 126125}
+  Fantasia:
+    template: {name: Collection, collection: 55427}
+  Fantastic Beasts:
+    template: {name: Collection, collection: 435259}
+  Fantastic Four:
+    template: {name: Collection, collection: 9744}
+  Fifty Shades:
+    template: {name: Collection, collection: 344830}
+  Final Destination:
+    template: {name: Collection, collection: 8864}
+  Final Fantasy:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls022264056/
+    summary: A collection of films based off or closely associated with the Final Fantasy video games.
+  Finding Nemo:
+    template: {name: Collection, collection: 137697}
+  The Flintstones:
+    template: {name: Collection, collection: 351684}
+  The Fox and the Hound:
+    template: {name: Collection, collection: 100970}
+  Free Willy:
+    template: {name: Collection, collection: 9328}
+  Friday:
+    template: {name: Collection, collection: 43563}
+  Friday the 13th:
+    template: {name: Collection, collection: 9735, movie: "6466, 222724"}
+  Frozen:
+    template: {name: Collection, collection: 386382, movie: "326359, 460793"}
+  G.I. Joe:
+    template: {name: Collection, collection: 135468}
+  Garfield:
+    template: {name: Collection, collection: "86115, 373918"}
+  George Carlin Stand Up:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls070221411/
+    summary: Collection of George Carlin's Stand Up Comedy HBO Specials
+  George Lopez Stand Up:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls086584751/
+    summary: Collection of George Lopez's Stand Up Comedy Specials
+  George of the Jungle:
+    template: {name: Collection, collection: 126221}
+  Ghost in the Shell:
+    template: {name: Collection, collection: 23026}
+  Ghost Rider:
+    template: {name: Collection, collection: 90306}
+  Ghostbusters:
+    template: {name: Collection, collection: 2980, movie: 43074}
+  The Girl - Millennium:
+    template: {name: Collection, collection: 575987}
+  The Godfather:
+    template: {name: Collection, collection: 230}
+  Godzilla (Showa):
+    template: {name: Collection, collection: 374509, movie: 18983}
+    sort_title: Godzilla 01 (Showa)
+  Godzilla (Heisei):
+    template: {name: Collection, collection: 374511, movie: 39256}
+    sort_title: Godzilla 02 (Heisei)
+  Godzilla (Millennium):
+    template: {name: Collection, collection: 374512}
+    sort_title: Godzilla 04 (Millennium)
+  Godzilla (MonsterVerse):
+    template: {name: Collection, collection: 535313, movie: 293167}
+    sort_title: Godzilla 05 (MonsterVerse)
+  Godzilla (Anime):
+    template: {name: Collection, collection: 535790}
+    sort_title: Godzilla 07 (Anime)
+  A Goofy Movie:
+    template: {name: Collection, collection: 410261}
+  Goosebumps:
+    template: {name: Collection, collection: 508783}
+  Guardians of the Galaxy:
+    template: {name: Collection, collection: 284433}
+  Green Street Hooligans:
+    template: {name: Collection, collection: 152544}
+  Grown Ups:
+    template: {name: Collection, collection: 180546}
+  Halloween:
+    template: {name: Collection, collection: "91361, 126209"}
+  Halo:
+    template: {name: Collection}
+    tmdb_list_details: 7070832
+  The Hangover:
+    template: {name: Collection, collection: 86119}
+  Hannibal Lecter:
+    template: {name: Collection, collection: 9743, movie: 11454}
+  Happy Death Day:
+    template: {name: Collection, collection: 526380}
+  Happy Feet:
+    template: {name: Collection, collection: 92012}
+  Harold & Kumar:
+    template: {name: Collection, collection: 30663}
+  Harry Potter:
+    template: {name: Collection, collection: 1241}
+  ... Has Fallen:
+    template: {name: Collection, collection: 386534}
+    name_mapping: Has Fallen
+  Hellboy:
+    template: {name: Collection, collection: 17235}
+  Hellboy (Animated):
+    template: {name: Collection, collection: 123203}
+  High School Musical:
+    template: {name: Collection, collection: 87253}
+  Highlander:
+    template: {name: Collection, collection: 8050}
+  The Hobbit:
+    template: {name: Collection, collection: 121938}
+  Home Alone:
+    template: {name: Collection, collection: 9888}
+  Honey, I Shrunk the Kids:
+    template: {name: Collection, collection: 72119}
+  Horrible Bosses:
+    template: {name: Collection, collection: 280588}
+  Hot Tub Time Machine:
+    template: {name: Collection, collection: 313576}
+  Hotel Transylvania:
+    template: {name: Collection, collection: 185103}
+  House of 1000 Corpses:
+    template: {name: Collection, collection: 105625}
+  How to Train Your Dragon:
+    template: {name: Collection, collection: 89137}
+  The Human Centipede:
+    template: {name: Collection, collection: 96671}
+  The Hunchback of Notre Dame:
+    template: {name: Collection, collection: 97456}
+  The Hunger Games:
+    template: {name: Collection, collection: 131635}
+  The Huntsman:
+    template: {name: Collection, collection: 393379}
+  Ice Age:
+    template: {name: Collection, collection: 8354, movie: "79218, 717095, 387893"}
+  The Incredibles:
+    template: {name: Collection, collection: 468222}
+  Independence Day:
+    template: {name: Collection, collection: 304378}
+  Indiana Jones:
+    template: {name: Collection, collection: 84}
+  Ip Man:
+    template: {name: Collection, collection: 70068, movie: "658009, 643413, 450001, 751391, 44249, 182127, 44865"}
+    collection_order: alpha
+  Iron Man:
+    template: {name: Collection, collection: 131292}
+  It:
+    template: {name: Collection, collection: 477962}
+  Jaws:
+    template: {name: Collection, collection: 2366}
+  Jay and Silent Bob:
+    template: {name: Collection, collection: 726870}
+  Jeff Dunham Stand Up:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls086022668/
+    summary: Collection of Jeff Dunham's Stand Up Comedy Specials
+  John Wick:
+    template: {name: Collection, collection: 404609}
+  Johnny Tsunami:
+    template: {name: Collection, collection: 394316}
+  Jumanji:
+    template: {name: Collection, collection: 495527}
+  Jump Street:
+    template: {name: Collection, collection: 212562}
+  The Jungle Book:
+    template: {name: Collection, collection: 97459}
+  Jurassic Park:
+    template: {name: Collection, collection: 328, movie: 630322}
+  The Karate Kid:
+    template: {name: Collection, collection: 8580, movie: 38575}
+  Kevin Hart Stand Up:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls049792208/
+    summary: Collection of Kevin Hart's Stand Up Comedy Specials
+  Kick-Ass:
+    template: {name: Collection, collection: 179892}
+  Kill Bill:
+    template: {name: Collection, collection: 2883}
+  Kingsman:
+    template: {name: Collection, collection: 391860}
+  Kung Fu Panda:
+    template: {name: Collection, collection: 77816}
+  Lady and the Tramp:
+    template: {name: Collection, collection: 97460}
+  Lake Placid:
+    template: {name: Collection, collection: 97768}
+  The Land Before Time:
+    template: {name: Collection, collection: 19163}
+  Legally Blonde:
+    template: {name: Collection, collection: 86024}
+  LEGO DC Comics Super Heroes:
+    template: {name: Collection, collection: 386162}
+  The Lego Movie:
+    template: {name: Collection, collection: 325470}
+  Lego Star Wars:
+    template: {name: Collection, collection: 302331}
+  Lethal Weapon:
+    template: {name: Collection, collection: 945}
+  Lilo & Stitch:
+    template: {name: Collection, collection: 97461}
+  The Lion King:
+    template: {name: Collection, collection: 94032}
+  The Little Mermaid:
+    template: {name: Collection, collection: 33085}
+  The Lord of the Rings:
+    template: {name: Collection, collection: 119}
+  The Lord of the Rings (Animated):
+    template: {name: Collection, collection: 141290}
+  Mad Max:
+    template: {name: Collection, collection: 8945}
+  Madagascar:
+    template: {name: Collection, collection: 14740, movie: "161143, 25472, 270946"}
+  Maleficent:
+    template: {name: Collection, collection: 531331}
+  Mall Cop:
+    template: {name: Collection, collection: 328372}
+  The Man with No Name:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls023916334/
+    summary: An Italian film series consisting of three Spaghetti Western films directed by Sergio Leone. The films are titled A Fistful of Dollars (1964), For a Few Dollars More (1965) and The Good, the Bad and the Ugly (1966). The series has become known for establishing the Spaghetti Western genre, and inspiring the creation of many more Spaghetti Western films. The three films are consistently listed among the best rated Western films in history.
+  Marvel Rising:
+    template: {name: Collection, collection: 627234}
+  Marx Brothers:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls068486735/
+    summary: The Marx Brothers were an American family comedy act that was successful in vaudeville, on Broadway, and in motion pictures from 1905 to 1949. Five of the Marx Brothers' thirteen feature films were selected by the American Film Institute (AFI) as among the top 100 comedy films, with two of them, Duck Soup (1933) and A Night at the Opera (1935), in the top fifteen. They are widely considered by critics, scholars, and fans to be among the greatest and most influential comedians of the 20th century.
+  Mary Poppins:
+    template: {name: Collection, collection: 527439}
+  The Mask:
+    template: {name: Collection, collection: 43072}
+  The Matrix:
+    template: {name: Collection, collection: 2344}
+  Maya the Bee:
+    template: {name: Collection, collection: 522250}
+  The Maze Runner:
+    template: {name: Collection, collection: 295130}
+  Mean Girls:
+    template: {name: Collection, collection: 99606}
+  Meet the Parents:
+    template: {name: Collection, collection: 51509}
+  Men In Black:
+    template: {name: Collection, collection: 86055}
+  The Mighty Ducks:
+    template: {name: Collection, collection: 10709}
+  Monsters, Inc.:
+    template: {name: Collection, collection: 137696}
+  Monty Python:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls072012494/
+    summary: Monty Python is a British surreal comedy troupe who created sketch comedy television shows and movies
+  Mortal Kombat:
+    template: {name: Collection, collection: 9818, movie: 664767}
+  Mothra:
+    template: {name: Collection, collection: 171732, movie: 39410}
+  Mulan:
+    template: {name: Collection, collection: 87236}
+  The Mummy:
+    template: {name: Collection, collection: 1733}
+  The Muppet:
+    template: {name: Collection, collection: 256377}
+  National Treasure:
+    template: {name: Collection, collection: 52984}
+  Neighbors:
+    template: {name: Collection, collection: 400700}
+  The Neverending Story:
+    template: {name: Collection, collection: 91430}
+  Night at the Museum:
+    template: {name: Collection, collection: 85943}
+  A Nightmare on Elm Street:
+    template: {name: Collection, collection: 8581, movie: "6466, 23437"}
+  Now You See Me:
+    template: {name: Collection, collection: 382685}
+  Ocean's:
+    template: {name: Collection, collection: 304}
+  Ong Bak:
+    template: {name: Collection, collection: 94589}
+  Oz:
+    template: {name: Collection, collection: 627517, movie: "13155, 68728"}
+  Pacific Rim:
+    template: {name: Collection, collection: 363369}
+  Paddington:
+    template: {name: Collection, collection: 488924}
+  Parasyte:
+    template: {name: Collection, collection: 385386}
+  Percy Jackson:
+    template: {name: Collection, collection: 179919}
+  Pet Sematary:
+    template: {name: Collection, collection: 10789, movie: 157433}
+  Peter Pan:
+    template: {name: Collection, collection: 55422}
+  Pitch Perfect:
+    template: {name: Collection, collection: 306031}
+  Planes:
+    template: {name: Collection, collection: 270252}
+  Planet of the Apes:
+    template: {name: Collection, collection: 173710}
+  Pocahontas:
+    template: {name: Collection, collection: 136214}
+  Pokémon:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls062687939/
+    summary: Pokémon is a media franchise created by video game designer Satoshi Tajiri that centers on fictional creatures called Pokémon. As of 2020, there have been 23 animated films and one live action film. The first nineteen animated films are based on the anime television series of the same name, with the original film being remade into the 22nd. The 20th, 21st and 23rd animated films are set in an alternate continuity to the anime.
+  Police Story:
+    template: {name: Collection, collection: 269098}
+  Power Rangers:
+    template: {name: Collection, collection: 708816, movie: "305470, 306264"}
+  Predator:
+    template: {name: Collection, collection: 399}
+  The Princess Diaries:
+    template: {name: Collection, collection: 107674}
+  The Purge:
+    template: {name: Collection, collection: 256322}
+  Quarantine:
+    template: {name: Collection, collection: 123932}
+  Rambo:
+    template: {name: Collection, collection: 5039}
+  Red Cliff:
+    template: {name: Collection, collection: 96677}
+  Rent:
+    template: {name: Collection}
+    tmdb_list_details: 7072241
+  The Rescuers:
+    template: {name: Collection, collection: 57971}
+  Resident Evil:
+    template: {name: Collection, collection: 17255}
+  "Resident Evil: Biohazard":
+    template: {name: Collection, collection: 133352}
+    name_mapping: Resident Evil Biohazard
+  Ride Along:
+    template: {name: Collection, collection: 376650}
+  Rio:
+    template: {name: Collection, collection: 229932}
+  Robert Langdon:
+    template: {name: Collection, collection: 115776}
+  RoboCop:
+    template: {name: Collection, collection: 5547}
+  Rocky:
+    template: {name: Collection, collection: 1575}
+  Rugrats:
+    template: {name: Collection, collection: 57129}
+  Rurouni Kenshin:
+    template: {name: Collection, collection: 247028}
+  Rush Hour:
+    template: {name: Collection, collection: 90863}
+  The Sandlot:
+    template: {name: Collection, collection: 87214}
+  The Santa Clause:
+    template: {name: Collection, collection: 53159}
+  Santa Paws:
+    template: {name: Collection, collection: 469648}
+  Saw:
+    template: {name: Collection, collection: 656}
+  Scary Movie:
+    template: {name: Collection, collection: 4246}
+  The Scorpion King:
+    template: {name: Collection, collection: 116669}
+  Scream:
+    template: {name: Collection, collection: 2602}
+  The Secret Life of Pets:
+    template: {name: Collection, collection: 427084}
+  Shaft:
+    template: {name: Collection, collection: "495, 608103"}
+  Shanghai Noon:
+    template: {name: Collection, collection: 59567}
+  Sharknado:
+    template: {name: Collection, collection: 286023}
+  Sherlock Holmes:
+    template: {name: Collection, collection: 102322}
+  The Shining:
+    template: {name: Collection, collection: 530064}
+  Shrek:
+    template: {name: Collection, collection: 2150}
+  Silent Hill:
+    template: {name: Collection, collection: 64748}
+  Slap Shot:
+    template: {name: Collection, collection: 261526}
+  The Smurfs:
+    template: {name: Collection, collection: 134897}
+  Spider-Man (Avengers):
+    template: {name: Collection, collection: 531241}
+  Spider-Man (Original):
+    template: {name: Collection, collection: 556}
+  Spy Kids:
+    template: {name: Collection, collection: 86486}
+  "Star Trek: Alternate Reality":
+    template: {name: Collection, collection: 115575}
+    name_mapping: Star Trek Alternate Reality
+  "Star Trek: The Next Generation":
+    template: {name: Collection, collection: 115570}
+    name_mapping: Star Trek The Next Generation
+  "Star Trek: The Original Series":
+    template: {name: Collection, collection: 151}
+    name_mapping: Star Trek The Original Series
+  "Star Wars: Skywalker Saga":
+    template: {name: Collection, collection: 10}
+    name_mapping: Star Wars Skywalker Saga
+  "Star Wars: Legends":
+    template: {name: Collection}
+    tmdb_movie: 348350, 330459
+    summary: "Star Wars Anthology Films and other Star Wars Movies"
+    name_mapping: Star Wars Legends
+  Step Up:
+    template: {name: Collection, collection: 86092}
+  Street Fighter:
+    template: {name: Collection, collection: 190435, movie: "687354, 11667"}
+  Stuart Little:
+    template: {name: Collection, collection: 99727}
+  Super Troopers:
+    template: {name: Collection, collection: 449462}
+  Superman (Original):
+    template: {name: Collection, collection: 8537}
+  Surf's Up:
+    template: {name: Collection, collection: 436295}
+  Taken:
+    template: {name: Collection, collection: 135483}
+  Tarzan:
+    template: {name: Collection, collection: 106768}
+  Ted:
+    template: {name: Collection, collection: 266672}
+  Tekken:
+    template: {name: Collection, collection: 294172}
+  The Terminator:
+    template: {name: Collection, collection: 528}
+  Texas Chainsaw Massacre:
+    template: {name: Collection, collection: "111751, 425175"}
+  Thor:
+    template: {name: Collection, collection: 131296}
+  The Three Stooges:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls075972675/
+    tmdb_movie: 76489
+    summary: The Three Stooges were an American vaudeville and comedy team active from 1922 until 1970, best known for their 190 short subject films by Columbia Pictures that have been regularly airing on television since 1958.
+  Tinker Bell:
+    template: {name: Collection, collection: 315595}
+  Tokyo Ghoul:
+    template: {name: Collection, collection: 551278}
+  Tom and Jerry:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls022966050/
+    summary: Tom and Jerry's animated feature-length films based on the series.
+  Tomb Raider:
+    template: {name: Collection, collection: "2467, 621142"}
+  Tomie:
+    template: {name: Collection, collection: 139394}
+  Toy Story:
+    template: {name: Collection, collection: 10194, movie: 130925}
+  Trainspotting:
+    template: {name: Collection, collection: 424202}
+  The Transporter:
+    template: {name: Collection, collection: 9518}
+  Tremors:
+    template: {name: Collection, collection: 91799}
+  Trolls:
+    template: {name: Collection, collection: 489724}
+  TRON:
+    template: {name: Collection, collection: 63043, movie: 73362}
+  Unbreakable:
+    template: {name: Collection}
+    imdb_list: https://www.imdb.com/list/ls022101006/
+    summary: The Unbreakable trilogy, officially known as the Eastrail 177 Trilogy, is an American superhero thriller and psychological horror film series. The films were written, produced, and directed by M. Night Shyamalan. The trilogy consists of Unbreakable (2000), Split (2016), and Glass (2019).
+  Viy:
+    template: {name: Collection, collection: 428046}
+  Wall Street:
+    template: {name: Collection, collection: 52783}
+  Wallace & Gromit:
+    template: {name: Collection, collection: 529}
+  Wayne's World:
+    template: {name: Collection, collection: 8979}
+  Wonder Woman:
+    template: {name: Collection, collection: 468552}
+  Wreck-It Ralph:
+    template: {name: Collection, collection: 404825}
+  xXx:
+    template: {name: Collection, collection: 52785}
+  Zenon:
+    template: {name: Collection, collection: 321148}
+  Zombieland:
+    template: {name: Collection, collection: 537982}
+  Zoolander:
+    template: {name: Collection, collection: 352789}
+  Zorro:
+    template: {name: Collection, collection: 1657}
+  Best of Netflix:    
+    summary: Best movies available to stream via Netflix according to Rotten Tomatoes
+    trakt_list: https://trakt.tv/users/hdlists/lists/best-movies-on-netflix
+    collection_order: release
+    collection_mode: default
+    sync_mode: sync        
+  Best of Superhero Movies:    
+    summary: Some of the best superhero movies
+    trakt_list: https://trakt.tv/users/hdlists/lists/best-superhero-movies
+    collection_order: release
+    collection_mode: default
+    sync_mode: sync            
+  Best of the Razzies:    
+    summary: Razzie Award Winners
+    trakt_list: https://trakt.tv/users/hdlists/lists/razzie-awards-worst-picture-winners
+    collection_order: release
+    collection_mode: default
+    sync_mode: sync            
+  True Stories:    
+    summary: Movies based on or inspired by a true story
+    trakt_list: https://trakt.tv/users/hdlists/lists/based-on-or-inspired-by-a-true-story
+    collection_order: release
+    collection_mode: default
+    sync_mode: sync          
+  Top Romantic Comedies:    
+    summary: Top rated romantic comedies according to Rotten Tomatoes
+    trakt_list: https://trakt.tv/users/hdlists/lists/romantic-comedies-rotten-tomatoes-top-rated
+    collection_order: release
+    collection_mode: default
+    sync_mode: sync
+  Another Holiday Movie Collection:
+    summary: NOT so sappy holiday movies
+    trakt_list: https://trakt.tv/users/twhiting9275/lists/another-holiday-movie-list
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: Holiday Movie Collection
+    url_poster: https://theposterdb.com/api/assets/108552/view?    
+    filters:
+      collection.not: "Sappy Holiday Movies"
+  Sappy Holiday Movies:
+    summary: "Hallmark and Lifetime seem to have a trademark, as it were on these movies. The formula works, and it's quite a successful one.
+    A collection of sappy Holiday movies. If they're not on Hallmark, or Lifetime, they probably should be!"
+    trakt_list: https://trakt.tv/users/twhiting9275/lists/sappy-holiday-list
+    sync_mode: sync
+    smart_label: critic_rating.desc
+    sort_title: HallmarkTime Movie Collection
+    url_poster: https://theposterdb.com/api/assets/48894/view?  

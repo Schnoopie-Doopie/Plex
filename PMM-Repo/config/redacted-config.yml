@@ -1,0 +1,694 @@
+libraries:
+  Movies:
+    schedule: daily
+    radarr:                                         # Can be individually specified per library as well
+      url: (redacted)
+      token: (redacted)
+      version: (redacted)
+      root_folder_path: /Videos/Movies
+      radarr_path: /Videos/Movies/
+      plex_path: /share/CACHEDEV2_DATA/Videos/Movies/
+      monitor: false
+      availability: released
+      quality_profile: Ultra-HD
+      tag: Scripts-Meta-Manager-Movies
+      search: false
+      add_existing: false
+      add_missing: true
+      upgrade_existing: false
+    settings:
+      asset_depth: 5
+      asset_directory: config/assets/movies
+      asset_folders: false
+      cache_builders: 1
+      create_asset_folders: false
+      prioritize_assets: false
+      missing_path: /config/missing/movies
+      sync_mode: sync
+    operations:
+      assets_for_all: true
+      delete_unmanaged_collections: true
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+      mass_audience_rating_update: imdb
+      mass_critic_rating_update: mdb_tomatoes
+      mass_user_rating_update: mdb
+      radarr_remove_by_tag: Scripts-Meta-Manager
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+    - file: config/Marvel_Cinematic_Universe_Phases.yml
+    - git: PMM/streaming
+      template_variables:       # Turn the separator collection on/off           #
+        sort_by: release.desc
+        use_separator: true        
+        collection_mode: hide
+    - git: PMM/award/separator
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/bafta
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/choice
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/emmy
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/golden
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/oscars
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/basic
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/imdb
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+        radarr_add_missing_key: true
+        radarr_tag_key: PMM-Chart-IMDB
+    - git: PMM/chart/other
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+        radarr_add_missing_key: true
+        radarr_tag_key: PMM-Chart-Other
+    - git: PMM/chart/tautulli
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/tmdb
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+        radarr_add_missing_key: true
+        radarr_tag_key: PMM-Chart-TMDB
+    - git: PMM/chart/trakt
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+        radarr_add_missing_key: true
+        radarr_tag_key: PMM-Chart-Trakt
+    - git: PMM/genre
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/movie/content_rating_us
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/movie/decade
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/movie/franchise
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/movie/seasonal
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+        schedule_independence: range(01/01-12/31)
+        schedule_easter: range(01/01-12/31)
+        schedule_valentine: range(01/01-12/31) 
+        schedule_patrick: range(01/01-12/31)
+        schedule_thanksgiving: range(01/01-12/31)
+        schedule_halloween: range(01/01-12/31) 
+        schedule_christmas: range(01/01-12/31)
+        schedule_years: range(01/01-12/31) 
+    - git: PMM/movie/universe
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/movie/imdb
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/resolution_standards
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/streaming
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/studio
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/year
+      template_variables:       # Turn the separator collection on/off           #
+        use_separator: true
+        collection_mode: hide
+    - git: PMM/actor
+      template_variables:
+        use_separator: true
+        collection_mode: hide
+        style: bw
+        data:
+          depth: 5
+          limit: 150
+#    - file: config/git/Khak1s/Movies/PopularOnServices
+#      template_variables:       # Turn the separator collection on/off           #
+#        collection_mode: hide        
+#    - file: config/git/Khak1s/Movies/Charts
+#      template_variables:       # Turn the separator collection on/off           #
+#        collection_mode: hide        
+#    - file: config/git/Khak1s/Movies/Genre
+#      template_variables:       # Turn the separator collection on/off           #
+#        collection_mode: hide        
+#    - file: config/Networks.yml
+#      template_variables:       # Turn the separator collection on/off           #
+#        collection_mode: hide
+#    - file: config/Tautulli.yml
+#      template_variables:       # Turn the separator collection on/off           #
+#        collection_mode: hide
+    overlay_path:
+    - remove_overlays: false
+#    - reapply_overlay: true
+    - file: config/movie-overlays.yml
+    - git: PMM/overlays/resolution
+      template_variables:
+        use_4k: true
+        use_1080p: true
+        use_hdr: true
+    - git: PMM/overlays/rt_cert_fresh
+      template_variables:
+        weight: 20
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true
+    - git: PMM/overlays/imdb_top_250
+      template_variables:
+        weight: 30
+    - git: PMM/overlays/mc_must_see
+      template_variables:
+        weight: 10
+  TV Shows:
+    schedule: daily
+    sonarr:                                         # Can be individually specified per library as well
+      url: (redacted)
+      token: (redacted)
+      version: (redacted)
+      add_missing: false
+      root_folder_path: /Videos/TV Shows
+      sonarr_path: /Videos/TV Shows/
+      plex_path: /share/CACHEDEV2_DATA/Videos/TV Shows/      
+      monitor: false
+      quality_profile: Ultra-HD
+      language_profile: English
+      series_type: standard
+      season_folder: true
+      tag: Scripts-Meta-Manager-Shows
+      search: true
+      cutoff_search: false
+      add_existing: false
+      upgrade_existing: true
+    settings:
+      asset_depth: 5
+      asset_directory: config/assets/TV-Shows
+      asset_folders: true
+      cache_builders: 1
+      create_asset_folders: true
+      prioritize_assets: false
+      missing_path: /config/missing/shows
+      sync_mode: append
+    operations:
+      assets_for_all: true
+      delete_unmanaged_collections: true
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+      mass_critic_rating_update: imdb
+      mass_audience_rating_update: tmdb
+      mass_user_rating_update: mdb_tomatoes
+      mass_episode_critic_rating_update: imdb
+      mass_episode_audience_rating_update: tmdb
+      sonarr_remove_by_tag: Scripts-Meta-Manager
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+    - git: PMM/streaming
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+        use_separator: true
+        sort_by: release.desc
+    - git: PMM/actor
+      template_variables:
+        collection_mode: hide
+        style: bw
+        data:
+          depth: 5
+          limit: 150
+    - git: PMM/award/separator
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/choice
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/emmy
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/golden
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/basic
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/imdb
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/other
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/tautulli
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/tmdb
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/trakt
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/genre
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/resolution_standards
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/show/content_rating_us
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/show/decade
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/show/network
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/studio
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/year
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\PopularOnServices
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\Charts
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\streaming
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - file: ./TVShows/TVShows-Collections.yml
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    overlay_path:
+    - remove_overlays: false
+#    - reapply_overlay: true
+    - file: config/movie-overlays.yml
+    - git: PMM/overlays/resolution
+      template_variables:
+        use_4k: true
+        use_1080p: true
+        use_hdr: true
+    - git: PMM/overlays/rt_cert_fresh
+      template_variables:
+        weight: 20
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true
+    - git: PMM/overlays/imdb_top_250
+      template_variables:
+        weight: 30
+    - git: PMM/overlays/mc_must_see
+      template_variables:
+        weight: 10
+    - git: PMM/overlays/resolution
+      template_variables:
+        overlay_level: season
+        use_4k: true
+        use_1080p: true
+        use_hdr: true
+    - git: PMM/overlays/rt_cert_fresh
+      template_variables:
+        overlay_level: season
+        weight: 20
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        overlay_level: season
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true
+    - git: PMM/overlays/imdb_top_250
+      template_variables:
+        overlay_level: season
+        weight: 30
+    - git: PMM/overlays/mc_must_see
+      template_variables:
+        overlay_level: season
+        weight: 10
+  Recorded TV:
+    schedule: daily
+    sonarr:                                         # Can be individually specified per library as well
+      url: (redacted)
+      token: (redacted)
+      version: (redacted)
+      add_missing: true
+      root_folder_path: /Videos/TV Shows
+      monitor: false
+      quality_profile: Ultra-HD
+      language_profile: English
+      series_type: standard
+      season_folder: true
+      tag: Scripts-Meta-Manager-Shows
+      search: true
+      cutoff_search: false
+      add_existing: false
+      upgrade_existing: true
+    settings:
+      asset_depth: 5
+      asset_directory: config/assets/Recorded-TV
+      asset_folders: true
+      cache_builders: 1
+      create_asset_folders: true
+      prioritize_assets: false
+      missing_path: /config/missing/shows
+      sync_mode: append
+    operations:
+      assets_for_all: true
+      delete_unmanaged_collections: true
+      delete_collections_with_less: 2
+      mass_collection_mode: hide
+      mass_genre_update: omdb
+      mass_critic_rating_update: imdb
+      mass_audience_rating_update: tmdb
+      mass_user_rating_update: mdb_tomatoes
+      mass_episode_critic_rating_update: imdb
+      mass_episode_audience_rating_update: tmdb
+      sonarr_remove_by_tag: Scripts-Meta-Manager
+      genre_mapper:
+        Action/Adventure: Action
+        Action & Adventure: Action
+        Sci-Fi: Science Fiction
+    metadata_path:
+    - git: PMM/streaming
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+        use_separator: true
+        sort_by: release.desc
+    - git: PMM/actor
+      template_variables:
+        collection_mode: hide
+        style: bw
+        data:
+          depth: 5
+          limit: 150
+    - git: PMM/award/separator
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/choice
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/emmy
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/award/golden
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/basic
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/imdb
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/other
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/tautulli
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/tmdb
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/chart/trakt
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/genre
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/resolution_standards
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/show/content_rating_us
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/show/decade
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/show/network
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/studio
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: PMM/year
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - git: Khak1s/Tv/PopularOnServices
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide        
+#    - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\PopularOnServices
+#      template_variables:       # Turn the separator collection on/off           #
+#        collection_mode: hide
+    - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\Charts
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - file: C:\Scripts\Testing\Plex-Meta-Manager-master\config\git\Khak1s\Tv\streaming
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    - file: ./TVShows/TVShows-Collections.yml
+      template_variables:       # Turn the separator collection on/off           #
+        collection_mode: hide
+    overlay_path:
+    - remove_overlays: false
+#    - reapply_overlay: true
+    - file: config/movie-overlays.yml
+    - git: PMM/overlays/resolution
+      template_variables:
+        use_4k: true
+        use_1080p: true
+        use_hdr: true
+    - git: PMM/overlays/rt_cert_fresh
+      template_variables:
+        weight: 20
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true
+    - git: PMM/overlays/imdb_top_250
+      template_variables:
+        weight: 30
+    - git: PMM/overlays/mc_must_see
+      template_variables:
+        weight: 10
+    - git: PMM/overlays/resolution
+      template_variables:
+        overlay_level: season
+        use_4k: true
+        use_1080p: true
+        use_hdr: true
+    - git: PMM/overlays/rt_cert_fresh
+      template_variables:
+        overlay_level: season
+        weight: 20
+    - git: PMM/overlays/audio_codec
+      template_variables:
+        overlay_level: season
+        use_dts: true
+        use_es: true
+        use_plus: true
+        use_hra: true
+        use_hd: true
+        use_truehd: true
+        use_plus-atmos: true
+        use_atmos: true
+        use_x: true
+        use_truehd-atmos: true
+    - git: PMM/overlays/imdb_top_250
+      template_variables:
+        overlay_level: season
+        weight: 30
+    - git: PMM/overlays/mc_must_see
+      template_variables:
+        overlay_level: season
+        weight: 10
+playlist_files:
+- git: PMM/playlist
+settings:                                       # Can be individually specified per library as well
+  asset_depth: 5
+  asset_directory: config/assets/other
+  asset_folders: true
+  assets_for_all: true
+  cache_builders: 1
+  create_asset_folders: true
+  prioritize_assets: false
+  cache: true
+  cache_expiration: 3
+  check_nightly: false
+  collection_minimum: 3
+  collection_order: release
+  delete_below_minimum: true
+  delete_not_scheduled: true
+  dimensional_asset_rename: true
+  download_url_assets: true
+  ignore_blank_results: true
+  item_refresh_delay: 0
+  missing_only_released: true
+  only_filter_missing: true
+  playlist_report: true
+  playlist_sync_to_users: all
+  released_missing_only: true
+  run_again_delay: 2
+  save_missing: true
+  save_report: true
+  show_asset_not_needed: true
+  show_filtered: true
+  show_missing: true
+  show_missing_assets: true
+  show_missing_episode_assets: true
+  show_missing_season_assets: true
+  show_options: false
+  show_unmanaged: true
+  sync_mode: sync
+  tvdb_language: eng
+  verify_ssl: true
+  default_collection_order:
+  ignore_ids:
+  ignore_imdb_ids:
+  custom_repo:
+plex:                                           # Can be individually specified per library as well
+  url: (redacted)
+  token: (redacted)
+  timeout: 60
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:
+  apikey: (redacted)
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: (redacted)
+  apikey: (redacted)
+radarr:                                         # Can be individually specified per library as well
+  url: (redacted)
+  token: (redacted)
+  version: (redacted)
+  add: true
+  root_folder_path: /Videos/Movies
+  monitor: true
+  availability: released
+  quality_profile: Ultra-HD
+  tag: Scripts-Meta-Manager
+  search: false
+  add_existing: true
+  add_missing: true
+  upgrade_existing: false
+  radarr_path:
+  plex_path:
+sonarr:                                         # Can be individually specified per library as well
+  url: (redacted)
+  token: (redacted)
+  version: (redacted)
+  add: false
+  root_folder_path: /Videos/TV Shows
+  monitor: none
+  quality_profile: Ultra-HD
+  language_profile: English
+  series_type: standard
+  season_folder: false
+  tag: Scripts-Meta-Manager
+  search: false
+  cutoff_search: false
+  add_existing: false
+  upgrade_existing: false
+  sonarr_path:
+  plex_path:
+omdb:
+  apikey: (redacted)
+  cache_expiration: 60
+trakt:
+  client_id: (redacted)
+  client_secret: (redacted)
+  authorization:
+    access_token: (redacted)
+    token_type: Bearer
+    expires_in: 7889238
+    refresh_token: (redacted)
+    scope: public
+    created_at: 1658199604
+  pin: 7BF3CC09
+mal:
+  client_id: (redacted)
+  client_secret: (redacted)
+  localhost_url: http://localhost/?code=def502007383d380aec4c5da581762d5e0b6c35806745bf37214c860b9b92ac4b5af08db4bdb770df81ab0f82d21d59c6fb7cae68892f1d03f2abe1ac3284d9b5c9e00beb55e2e19b3d3e335987e5de34d86d0cdeec26ff7123a46ee99e493086a831223738227650061c2fea1e44eb2666f303a3401461851d074187613695c410d4eed10132b05a521fe8f319adcd42f96cbb42c7f9735de605308d6349df05a10045abea61aa3868ba49b6dec3442882e2b82313f98c9ff2a3175d9c4d83ff3d2bdd02d473bf09c6b35d339f42141f809871864f5d515f9930cc2b58f2c84693eb5f56faa817232d9716c6fcd0a6b4a8e15c1966bab59c7b93d7ff468c7562dfb7402cc5a3980e08a9c8704a8cf7605de95852ba923b00c86b109d97fa16766b496154b8260919bcd89bf7d805726f03e2050db9c4f8144509cdc2fd5034a45aabef4e1b66926f37170d84b2f12ab34f2213d39c8ece3f89b7872361bf1754029d536b645f5f700be2c656be4fcee3f173950835f64f99e84d197df27be156ffceb10c2712c95ffcc6166c3ab043f7ad06c70872157085487d430b112a75d939b774a5425bce9c9c6ec54b93ec926ba40856207f48ef69f5a5065504c37dbb406cfbd62e16f4420ab6c2410bca98e51bf68c2466ab09614d29f40dfba1e9c09343c13835732c6d859
+  authorization:
+    access_token: (redacted)
+    token_type: Bearer
+    expires_in: 2678400
+    refresh_token: (redacted)
+webhooks:                                       # Can be individually specified per library as well
+  error:
+  run_start:
+  run_end:
+  collection_creation:
+  collection_addition:
+  collection_removal:
+  version:
+mdblist:
+  apikey: (redacted)
+  cache_expiration: 60
+notifiarr:
+  apikey: (redacted)
